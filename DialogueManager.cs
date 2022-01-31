@@ -15,17 +15,19 @@ public class DialogueManager : Control
     public PackedScene InteraceSelectableObject;
 
     // TEST VARIABLES
+    /**
     private String ingredient_01 = "Icon.png";
     private String ingredient_02 = "Icon.png";
     private String drink = "Icon.png";
     private String orderType = "vague"; // shows both ingredients
+    */
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
 
         // test case
-        ShowDialogueElement(ingredient_01, ingredient_02, orderType);
+        // ShowDialogueElement(ingredient_01, ingredient_02, orderType);
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,7 +38,7 @@ public class DialogueManager : Control
 
     // TEST CASE
     // Shows popup with ingredients as parameters
-    public void ShowDialogueElement(String ingredient_01, String ingredient_02, String orderType) {
+    public void ShowDialogueElement(String ingredient_01, String ingredient_02, String drink, String orderType) {
         // make popup visible
         GetNode<Popup>("Popup").Popup_();
 
