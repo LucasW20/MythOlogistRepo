@@ -6,7 +6,7 @@ using System.Collections.Generic;
  * Manages speech popup to communicate orders to player.
  * @atuhor Benjamin_J_Bucheger
  * @start 1-30-2022
- * @version 1-30-2022
+ * @version 1-31-2022
  */
 public class DialogueManager : Control
 {
@@ -15,19 +15,19 @@ public class DialogueManager : Control
     public PackedScene InteraceSelectableObject;
 
     // TEST VARIABLES
-    /**
-    private String ingredient_01 = "Icon.png";
-    private String ingredient_02 = "Icon.png";
-    private String drink = "Icon.png";
-    private String orderType = "vague"; // shows both ingredients
-    */
+    
+    //private String ingredient_01 = "Icon.png";
+    //private String ingredient_02 = "Icon.png";
+    //private String drink = "Icon.png";
+    //private String orderType = "vague"; // shows both ingredients
+    
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
 
         // test case
-        // ShowDialogueElement(ingredient_01, ingredient_02, orderType);
+        //ShowDialogueElement(ingredient_01, ingredient_02, drink, orderType);
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -87,8 +87,8 @@ public class DialogueManager : Control
         {
             case ("ingredient"): // shows both ingredients
                 // change both ingredient sprites to match ingredients
-                GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/"+drink.getFirstIng()) as Texture;
-                GetNode<Sprite>("Popup/Ingredient02").Texture = ResourceLoader.Load("res://Images/"+drink.getSecondIng()) as Texture;
+                GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/"+drink.getFirstIng().getKeyword()) as Texture;
+                GetNode<Sprite>("Popup/Ingredient02").Texture = ResourceLoader.Load("res://Images/"+drink.getSecondIng().getKeyword()) as Texture;
 
                 // make ingredient sprites and label visible
                 GetNode<Sprite>("Popup/Ingredient01").Visible = true;
