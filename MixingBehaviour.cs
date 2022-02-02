@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 
 /***
- * Handles the behaviour when two ingredients are chosen
+ * Handles the behavior when two ingredients are chosen
  * @author Lucas_C_Wright
  * @start 1-29-2022
  * @version 1-31-2022

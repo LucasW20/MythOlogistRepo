@@ -27,7 +27,7 @@ public class Drink {
 		ing2 = nIng2;
     }
 
-	//default constructor. Should never be used to avoid blank receipes and errors
+	//default constructor. Should never be used to avoid blank recipes and errors
 	private Drink() {
 		//ingredient1 = "";
 		//ingredient2 = "";

@@ -16,9 +16,9 @@ public class DialogueManager : Control
 
     // TEST VARIABLES
     
-    //private String ingredient_01 = "Icon.png";
-    //private String ingredient_02 = "Icon.png";
-    //private String drink = "Icon.png";
+    //private String ingredient_01 = "icon.png";
+    //private String ingredient_02 = "icon.png";
+    //private String drink = "icon.png";
     //private String orderType = "vague"; // shows both ingredients
     
 
