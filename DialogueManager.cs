@@ -16,16 +16,15 @@ public class DialogueManager : Control
 
     // TEST VARIABLES
     
-    //private String ingredient_01 = "Icon.png";
-    //private String ingredient_02 = "Icon.png";
-    //private String drink = "Icon.png";
+    //private String ingredient_01 = "icon.png";
+    //private String ingredient_02 = "icon.png";
+    //private String drink = "icon.png";
     //private String orderType = "vague"; // shows both ingredients
     
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-
         // test case
         //ShowDialogueElement(ingredient_01, ingredient_02, drink, orderType);
     }

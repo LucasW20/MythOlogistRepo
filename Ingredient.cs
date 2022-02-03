@@ -10,7 +10,7 @@ using System;
 public class Ingredient {
     private string keyword;
 
-    //default constructor. shouldnt be used when creating ingredients
+    //default constructor. Shouldn't be used when creating ingredients
     private Ingredient() {
         keyword = "";
     }

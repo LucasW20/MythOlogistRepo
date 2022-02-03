@@ -12,13 +12,21 @@ public class Drink {
 	private Ingredient ing2;
 	private string keyword;
 
-	//constructor to be used when creating a new drink and recipe.
-	public Drink(Ingredient nIng1, Ingredient nIng2) {
+	////constructor to be used when creating a new drink and recipe.
+	//public Drink(string nIng1, string nIng2, string nKW) {
+	//	//assigned passed values to class variables
+	//	ingredient1 = nIng1;
+	//	ingredient2 = nIng2;
+	//	keyword = nKW;
+	//}
+
+	public Drink(string nKeyword, Ingredient nIng1, Ingredient nIng2) {
+		keyword = nKeyword;
 		ing1 = nIng1;
 		ing2 = nIng2;
     }
 
-	//default constructor. Should never be used to avoid blank receipes and errors
+	//default constructor. Should never be used to avoid blank recipes and errors
 	private Drink() {
 		ing1 = null;
 		ing2 = null;
