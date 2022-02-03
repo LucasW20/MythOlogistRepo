@@ -5,12 +5,10 @@ using System;
  * Holds information about a single drink
  * @author Lucas_C_Wright
  * @start 1-29-2022
- * @version 1-31-2022
+ * @version 2-2-2022
  */
 public class Drink {
-	//private string ingredient1;
 	private Ingredient ing1;
-	//private string ingredient2;
 	private Ingredient ing2;
 	private string keyword;
 
@@ -30,8 +28,6 @@ public class Drink {
 
 	//default constructor. Should never be used to avoid blank recipes and errors
 	private Drink() {
-		//ingredient1 = "";
-		//ingredient2 = "";
 		ing1 = null;
 		ing2 = null;
 		keyword = "";
