@@ -3,6 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+/***
+ * Singleton class that holds a list for Ingredients and Drinks.
+ * @atuhor Benjamin_J_Bucheger
+ * @start 1-31-2022
+ * @version 2-2-2022
+ */
 public class DrinkData : Node
 {
     // Singleton setup
@@ -22,6 +28,7 @@ public class DrinkData : Node
     private List<Drink> _drinkList = new List<Drink>();
 
 
+    // Add ingredient to ingredients list
     public void addIngredient(Ingredient ingredient) {
         _ingredientList.Add(ingredient);
     }
