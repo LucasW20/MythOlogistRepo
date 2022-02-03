@@ -22,7 +22,8 @@ public class Drink {
 	//	keyword = nKW;
 	//}
 
-	public Drink(Ingredient nIng1, Ingredient nIng2) {
+	public Drink(string nKeyword, Ingredient nIng1, Ingredient nIng2) {
+		keyword = nKeyword;
 		ing1 = nIng1;
 		ing2 = nIng2;
     }

@@ -53,14 +53,31 @@ public class DrinkData : Node
     {
         // add all drink and ingredients to list
         //var path = Path.Combine(Directory.GetCurrentDireectory(), "\\ingredientsList.txt");
-        List<string> text = System.IO.File.ReadLines("Some\\ingredientsList.txt").ToList();
-        /*
+
+        // REQUIRES TESTING AS IS
+        // Other errors preventing from checking if filling the list works
+
+        var path = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "TextFiles\\IngredientsList.txt");
+        List<string> text = System.IO.File.ReadLines(path).ToList();
+        GD.Print("Text list count: " + text.Count());
         foreach (string txt in text) {
-            Ingredient temp = new Ingredient(txt+"png");
-            _ingredientList.Add(temp);
+            Ingredient tempIng = new Ingredient(txt+"png");
+            _ingredientList.Add(tempIng);
         }
-        */
-        Console.WriteLine(text.Count());
+        GD.Print("Ingredient list count: " + _ingredientList.Count());
+
+        path = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "TextFiles\\DrinksList.txt");
+        text = System.IO.File.ReadLines(path).ToList();
+        GD.Print("Text list count: " + text.Count());
+        string[] temp;
+        foreach (string txt in text) {
+            temp = txt.Split(',');
+            Ingredient tempIng1 = new Ingredient(txt[1]+"png"); // first ingredient
+            Ingredient tempIng2 = new Ingredient(txt[2]+"png"); // second ingredient
+            Drink tempDrink = new Drink(text[0]+"png", tempIng1, tempIng2);
+            _drinkList.Add(tempDrink);
+        }
+        GD.Print("Drink list count: " + _drinkList.Count());
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
