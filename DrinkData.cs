@@ -82,9 +82,22 @@ public class DrinkData : Node
         // and load objects into _drinkList
         string[] temp;
         foreach (string txt in text) {
-            temp = txt.Split(',');
-            Ingredient tempIng1 = new Ingredient(txt[1]+"png"); // first ingredient
-            Ingredient tempIng2 = new Ingredient(txt[2]+"png"); // second ingredient
+            temp = txt.Split(','); // split text list elements into an array
+
+            // Initialize temp ingredients
+            Ingredient tempIng1 = null; // first ingredient
+            Ingredient tempIng2 = null; // second ingredient
+
+            // Grab Ingredient objects from the now full _ingredientList
+            foreach (Ingredient ing in _ingredientList) {
+                if (tempIng1 == null && ing.getKeyword() == temp[1]) {
+                    tempIng1 = ing;
+                }
+                else if (tempIng2 == null && ing.getKeyword() == temp[2]) {
+                    tempIng2 = ing;
+                }
+            }
+
             Drink tempDrink = new Drink(text[0]+"png", tempIng1, tempIng2);
             _drinkList.Add(tempDrink);
         }
