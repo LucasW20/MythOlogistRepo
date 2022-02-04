@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://art assets/ingridents/bloodOfHeyZeus.png" type="Texture" id=1]
 [ext_resource path="res://art assets/ingridents/forbidenFruit.png" type="Texture" id=3]
@@ -9,6 +9,7 @@
 [ext_resource path="res://art assets/ingridents/styxsSluge.png" type="Texture" id=8]
 [ext_resource path="res://art assets/ingridents/UnicornHorn.png" type="Texture" id=9]
 [ext_resource path="res://art assets/backround/backround test.png" type="Texture" id=10]
+[ext_resource path="res://bar room screen/drink panel.gd" type="Script" id=12]
 
 [node name="main screen" type="Control"]
 margin_right = 1025.0
@@ -21,6 +22,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 725.0
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -34,6 +36,7 @@ margin_left = 185.0
 margin_top = 157.0
 margin_right = 265.0
 margin_bottom = 237.0
+action_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
