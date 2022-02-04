@@ -5,7 +5,7 @@ using System;
  * Holds information about a single drink
  * @author Lucas_C_Wright
  * @start 1-29-2022
- * @version 2-2-2022
+ * @version 2-4-2022
  */
 public class Drink {
 	private Ingredient ing1;
@@ -13,12 +13,13 @@ public class Drink {
 	private string keyword;
 
 	//constructor to be used when creating a new drink and recipe.
-	public Drink(Ingredient nIng1, Ingredient nIng2) {
+	public Drink(string nKeyword, Ingredient nIng1, Ingredient nIng2) {
+		keyword = nKeyword;
 		ing1 = nIng1;
 		ing2 = nIng2;
     }
 
-	//default constructor. Should never be used to avoid blank receipes and errors
+	//default constructor. Should never be used to avoid blank recipes and errors
 	private Drink() {
 		ing1 = null;
 		ing2 = null;

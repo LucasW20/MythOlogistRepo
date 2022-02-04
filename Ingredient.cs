@@ -5,20 +5,14 @@ using System;
  * Holds information about a singluar ingredient
  * @author Lucas_C_Wright
  * @start 1-31-2022
- * @version 2-2-2022
+ * @version 2-4-2022
  */
 public class Ingredient {
     private string keyword;
 
-    //default constructor. shouldnt be used when creating ingredients
-    private Ingredient() {
-        keyword = "";
-    }
-    
-    //constructor meant to be used
-    public Ingredient(string nKeyword) {
-        keyword = nKeyword;
-    }
+    //constructors
+    private Ingredient() { keyword = ""; } //Shouldn't be used when creating ingredients
+    public Ingredient(string nKeyword) { keyword = nKeyword; } //Should be used when creating ingredients
 
     //getter
     public string getKeyword() { return keyword; }
