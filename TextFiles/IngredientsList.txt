@@ -1,8 +1,8 @@
-in_01_fire
-in_02_horn
-in_03_newt
-in_04_pois
-in_05_styx
-in_06_zues
+in_01_greekFireJuice
+in_02_unicornHorn
+in_03_newtEye
+in_04_orochiPoison
+in_05_styxsSluge
+in_06_zeusJooz
 in_07_soma
-in_08_forb
+in_08_forbidenFruit
