@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/questionMark.png-5ebd4012d5d1b8c4cea338b9c23d71f7.stex"
+path="res://.import/dr_17_greekFireJuice.png-346673cfb82b64d2c36720bf7dac81bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/questionMark.png"
-dest_files=[ "res://.import/questionMark.png-5ebd4012d5d1b8c4cea338b9c23d71f7.stex" ]
+source_file="res://Images/Drinks/dr_17_greekFireJuice.png"
+dest_files=[ "res://.import/dr_17_greekFireJuice.png-346673cfb82b64d2c36720bf7dac81bf.stex" ]
 
 [params]
 

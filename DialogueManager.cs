@@ -16,17 +16,17 @@ public class DialogueManager : Control
 
     // TEST VARIABLES
     
-    //private String ingredient_01 = "icon.png";
-    //private String ingredient_02 = "icon.png";
-    //private String drink = "icon.png";
-    //private String orderType = "vague"; // shows both ingredients
+    private String ingredient_01 = "in_01_realGreekFire.png";
+    private String ingredient_02 = "in_02_unicornHorn.png";
+    private String drink = "dr_01_crunchy.png";
+    private String orderType = "vague"; // shows both ingredients
     
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         // test case
-        //ShowDialogueElement(ingredient_01, ingredient_02, drink, orderType);
+        ShowDialogueElement(ingredient_01, ingredient_02, drink, orderType);
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,8 +46,8 @@ public class DialogueManager : Control
         {
             case ("ingredient"): // shows both ingredients
                 // change both ingredient sprites to match ingredients
-                GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/"+ingredient_01) as Texture;
-                GetNode<Sprite>("Popup/Ingredient02").Texture = ResourceLoader.Load("res://Images/"+ingredient_02) as Texture;
+                GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/Ingredients/"+ingredient_01) as Texture;
+                GetNode<Sprite>("Popup/Ingredient02").Texture = ResourceLoader.Load("res://Images/Ingredients/"+ingredient_02) as Texture;
 
                 // make ingredient sprites and label visible
                 GetNode<Sprite>("Popup/Ingredient01").Visible = true;
@@ -58,7 +58,7 @@ public class DialogueManager : Control
             case ("vague"): // shows one ingredient and a question mark
                 // change first ingredient sprite to match ingredient
                 // TODO - select shown ingredient at random
-                GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/"+ingredient_01) as Texture;
+                GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/Ingredients/"+ingredient_01) as Texture;
 
                 // make first ingredient sprite and label visible
                 GetNode<Sprite>("Popup/Ingredient01").Visible = true;
@@ -67,7 +67,7 @@ public class DialogueManager : Control
                 break;
             case ("drink"): // shows completed drink
                 // change drink sprite to match drink
-                GetNode<Sprite>("Popup/Drink").Texture = ResourceLoader.Load("res://Images/"+drink) as Texture;
+                GetNode<Sprite>("Popup/Drink").Texture = ResourceLoader.Load("res://Images/Drinks/"+drink) as Texture;
 
                 // make drink sprite visible
                 GetNode<Sprite>("Popup/Drink").Visible = true;
@@ -86,8 +86,8 @@ public class DialogueManager : Control
         {
             case ("ingredient"): // shows both ingredients
                 // change both ingredient sprites to match ingredients
-                GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/"+drink.getFirstIng().getKeyword()) as Texture;
-                GetNode<Sprite>("Popup/Ingredient02").Texture = ResourceLoader.Load("res://Images/"+drink.getSecondIng().getKeyword()) as Texture;
+                GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/Ingredients/"+drink.getFirstIng().getKeyword()) as Texture;
+                GetNode<Sprite>("Popup/Ingredient02").Texture = ResourceLoader.Load("res://Images/Ingredients/"+drink.getSecondIng().getKeyword()) as Texture;
 
                 // make ingredient sprites and label visible
                 GetNode<Sprite>("Popup/Ingredient01").Visible = true;
@@ -98,7 +98,7 @@ public class DialogueManager : Control
             case ("vague"): // shows one ingredient and a question mark
                 // change first ingredient sprite to match ingredient
                 // TODO - select shown ingredient at random
-                GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/"+drink.getFirstIng()) as Texture;
+                GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/Ingredients/"+drink.getFirstIng()) as Texture;
 
                 // make first ingredient sprite and label visible
                 GetNode<Sprite>("Popup/Ingredient01").Visible = true;
@@ -107,7 +107,7 @@ public class DialogueManager : Control
                 break;
             case ("drink"): // shows completed drink
                 // change drink sprite to match drink
-                GetNode<Sprite>("Popup/Drink").Texture = ResourceLoader.Load("res://Images/"+drink.getDrinkKeyword()) as Texture;
+                GetNode<Sprite>("Popup/Drink").Texture = ResourceLoader.Load("res://Images/Drinks/"+drink.getDrinkKeyword()) as Texture;
 
                 // make drink sprite visible
                 GetNode<Sprite>("Popup/Drink").Visible = true;
