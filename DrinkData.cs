@@ -5,7 +5,7 @@ using System.Linq;
 
 /***
  * Singleton class that holds a list for Ingredients and Drinks.
- * @atuhor Benjamin_J_Bucheger
+ * @author Benjamin_J_Bucheger
  * @start 1-31-2022
  * @version 2-2-2022
  */
@@ -54,6 +54,17 @@ public class DrinkData : Node
         }
         return null;
     }
+        
+    //get a drink via index
+    public Drink returnDrinkAt(int index) { return _drinkList[index]; }
+    //get a ingredient via index
+    public Ingredient returnIngredientAt(int index) { return _ingredientList[index]; }
+    //get size of ingredient list
+    public int IngredientSize() { return _ingredientList.Count; }
+    //get size of drink list
+    public int DrinkSize() { return _drinkList.Count; }
+
+
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

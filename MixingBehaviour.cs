@@ -6,7 +6,7 @@ using System;
  * Handles the behavior when two ingredients are chosen
  * @author Lucas_C_Wright
  * @start 1-29-2022
- * @version 2-2-2022
+ * @version 2-4-2022
  */
 public class MixingBehaviour : Node {
     //private List<Drink> drinkList = new List<Drink>();
@@ -19,9 +19,14 @@ public class MixingBehaviour : Node {
 
     private void loadList() {
         //connect with DrinkData and loop through the DrinkList
-            //foreach drink in the drinklist
-                //get both ingredients and add them to a tuple
-                //add the drink object and tuple object to the drinkMap
+        DrinkData inst = DrinkData.Instance;
+
+        //foreach drink in the drinklist
+        for (int i = 0; i < inst.DrinkSize(); i++) {
+            //add the drink object and tuple object to the drinkMap
+            drinkMap.Add(new Tuple<Ingredient, Ingredient>(inst.returnDrinkAt(i).getFirstIng(), inst.returnDrinkAt(i).getSecondIng()),
+                inst.returnDrinkAt(i));
+        }
     }
 
     //takes two ingredients from the input system and checks if there's a drink associated with them
