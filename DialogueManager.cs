@@ -97,7 +97,6 @@ public class DialogueManager : Control
                 break;
             case ("vague"): // shows one ingredient and a question mark
                 // change first ingredient sprite to match ingredient
-                // TODO - select shown ingredient at random
                 GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/"+drink.getFirstIng()) as Texture;
                 // add: Load "?" texture. Drink will be based on character
 
