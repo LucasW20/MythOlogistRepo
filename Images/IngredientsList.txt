@@ -1,8 +1,0 @@
-in_01_fire.png
-in_02_horn.png
-in_03_newt.png
-in_04_pois.png
-in_05_styx.png
-in_06_zues.png
-in_07_soma.png
-in_08_forb.png
