@@ -8,16 +8,17 @@ using System;
  * @version 2-7-2022
  */
 public class OrderSys : Node {
-
     private DialogueManager speech;
     private MixingBehaviour mix;
     private Drink correctDrink;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready() {
-        speech = GetNode("DialogueManager") as DialogueManager;
-        mix = GetNode("Mixing") as MixingBehaviour;
+        speech = GetParent<InterfaceManager>().GetNode("DialogueManager") as DialogueManager;
+        mix = new MixingBehaviour();
         correctDrink = null;
+
+        GD.Print("Ran OrderSys");
     }
 
     //  // Called every frame. 'delta' is the elapsed time since the previous frame.

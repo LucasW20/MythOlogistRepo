@@ -8,12 +8,13 @@ using System;
  * @start 1-29-2022
  * @version 2-4-2022
  */
-public class MixingBehaviour : Node {
+public class MixingBehaviour{
     //private List<Drink> drinkList = new List<Drink>();
     private Dictionary<Tuple<Ingredient, Ingredient>, Drink> drinkMap = new Dictionary<Tuple<Ingredient, Ingredient>, Drink>();
 
     // Called when the node enters the scene tree for the first time.
-    public override void _Ready() {
+    public MixingBehaviour() {
+        GD.Print("Started MixingBehaviour");
         loadList();
     }
 
