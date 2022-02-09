@@ -13,7 +13,7 @@
 [ext_resource path="res://BarRoomScreen/drink panel.gd" type="Script" id=11]
 [ext_resource path="res://Images/Drinks/dr_02_deadinside.png" type="Texture" id=12]
 [ext_resource path="res://Images/speech_bubble.png" type="Texture" id=13]
-[ext_resource path="res://OrderSys.cs" type="Script" id=14]
+[ext_resource path="res://Scripts/OrderSys.cs" type="Script" id=14]
 [ext_resource path="res://Scripts/InterfaceManager.cs" type="Script" id=15]
 [ext_resource path="res://Scripts/DialogueManager.cs" type="Script" id=16]
 [ext_resource path="res://Scripts/MixingBehaviour.cs" type="Script" id=17]
@@ -42,7 +42,6 @@ texture = ExtResource( 6 )
 
 [node name="Ui" type="Sprite" parent="Background/BackroundTest"]
 position = Vector2( 4.07696e-05, 2.65241e-05 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 
 [node name="DrinkSidePanel" type="VBoxContainer" parent="."]

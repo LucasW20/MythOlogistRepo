@@ -8,7 +8,7 @@ using System.Collections.Generic;
  * @start 2-7-2022
  * @version 2-9-2022
  */
-public abstract class StateMachineRuntime {
+public abstract class StateMachineRuntime : Node {
     private string state;
     private string previousState = "";
     private int stateIndex;
@@ -16,7 +16,20 @@ public abstract class StateMachineRuntime {
 
 
     // Called when the node enters the scene tree for the first time.
-    public StateMachineRuntime () {
+    //public StateMachineRuntime () {
+    //    //add all of the various states to the list
+    //    GD.Print("Created new StateMachineRuntime");
+    //    states.Add("Arrive");
+    //    states.Add("Order");
+    //    states.Add("Leave");
+
+    //    //set the state and start the logic
+    //    state = states[0];
+    //    stateIndex = 0;
+    //    stateLogic();
+    //}
+
+    public override void _Ready() {
         //add all of the various states to the list
         GD.Print("Created new StateMachineRuntime");
         states.Add("Arrive");
@@ -67,8 +80,8 @@ public abstract class StateMachineRuntime {
 
     private void ArriveLogic() {
         //create a new character (maybe randomized to decide the image used)
-        GetNode<Sprite>
-        
+        GetNode<Sprite>("CharacterSprite").Texture = ResourceLoader.Load("res://Images/Characters") as Texture;
+
         //have the new character 'walk' on screen
         //change to the next state
     }
@@ -82,29 +95,4 @@ public abstract class StateMachineRuntime {
         //add points to point total (only if we do a points thingy)
         //change to the first state
     }
-
-    
-
-    /*
-    public abstract void stateLogic();
-
-    public abstract void enterState(string newState, string oldState);
-
-    public abstract void exitState(string oldState, string newState);
-
-    public abstract void transition();
-
-    public void ChangeState(string nState) {
-        previousState = state;
-        state = nState;
-
-        if (previousState != null) {
-            exitState(previousState, state);
-        }
-        if (nState != null) {
-            enterState(nState, previousState);
-        }
-
-    }
-    */
 }
