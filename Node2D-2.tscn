@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Images/speech_bubble.png" type="Texture" id=1]
 [ext_resource path="res://Images/icon.png" type="Texture" id=2]
-[ext_resource path="res://DialogueManager.cs" type="Script" id=3]
-[ext_resource path="res://InterfaceManager.cs" type="Script" id=4]
-[ext_resource path="res://DrinkData.cs" type="Script" id=5]
-[ext_resource path="res://OrderSys.cs" type="Script" id=6]
+[ext_resource path="res://Scripts/DialogueManager.cs" type="Script" id=3]
+[ext_resource path="res://Scripts/InterfaceManager.cs" type="Script" id=4]
+[ext_resource path="res://Scripts/DrinkData.cs" type="Script" id=5]
+[ext_resource path="res://Scripts/OrderSys.cs" type="Script" id=6]
+[ext_resource path="res://Scripts/MixingBehaviour.cs" type="Script" id=7]
 
-[node name="Node2D-2" type="Node2D"]
+[node name="SystemsNode" type="Node2D"]
 
 [node name="InterfaceManager" type="CanvasLayer" parent="."]
 script = ExtResource( 4 )
@@ -70,10 +71,18 @@ texture = ExtResource( 2 )
 [node name="DrinkData" type="Node2D" parent="."]
 script = ExtResource( 5 )
 
-[node name="OrderSystem" type="Control" parent="."]
+[node name="Order Sytem" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mixing" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
