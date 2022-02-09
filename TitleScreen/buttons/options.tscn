@@ -2,8 +2,17 @@
 
 [ext_resource path="res://TitleScreen/buttons/buttonlabel.tscn" type="PackedScene" id=1]
 
-
 [node name="options" instance=ExtResource( 1 )]
+anchor_right = 0.352
+anchor_bottom = 0.1
+margin_right = -0.448029
+margin_bottom = 0.0
 
 [node name="buttonlabel" parent="." index="0"]
-text = "options"
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+text = "Options"
+align = 1
+valign = 1

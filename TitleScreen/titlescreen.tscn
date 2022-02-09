@@ -1,61 +1,69 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://TitleScreen/buttons/NewGame.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TitleScreen/buttons/exit game.tscn" type="PackedScene" id=2]
 [ext_resource path="res://TitleScreen/buttons/options.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Images/Drinks/dr_08_smokeShow.png" type="Texture" id=4]
+[ext_resource path="res://Images/Buttons/Asset 4@2x.png" type="Texture" id=4]
+[ext_resource path="res://Images/Backround/lookFeel.png" type="Texture" id=5]
 
 [node name="titlescreen" type="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Menu" type="VBoxContainer" parent="."]
-margin_left = 120.0
-margin_top = 200.0
-margin_right = 900.0
-margin_bottom = 520.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 510, 367.125 )
+scale = Vector2( 0.462485, 0.462485 )
+texture = ExtResource( 5 )
+
+[node name="NewGameButton" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="centerrow" type="HBoxContainer" parent="Menu"]
-margin_right = 780.0
-margin_bottom = 320.0
-size_flags_vertical = 3
-
-[node name="buttons" type="VBoxContainer" parent="Menu/centerrow"]
-margin_right = 388.0
-margin_bottom = 320.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="NewGame" parent="Menu/centerrow/buttons" instance=ExtResource( 1 )]
-margin_right = 388.0
-margin_bottom = 60.0
-
-[node name="options" parent="Menu/centerrow/buttons" instance=ExtResource( 3 )]
-margin_top = 64.0
-margin_right = 388.0
-margin_bottom = 124.0
-
-[node name="exit game" parent="Menu/centerrow/buttons" instance=ExtResource( 2 )]
-margin_top = 128.0
-margin_right = 388.0
-margin_bottom = 188.0
-
-[node name="CenterContainer" type="CenterContainer" parent="Menu/centerrow"]
-margin_left = 392.0
-margin_right = 780.0
-margin_bottom = 320.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="Menu/centerrow/CenterContainer"]
-margin_left = 84.0
-margin_top = 50.0
-margin_right = 304.0
-margin_bottom = 270.0
+[node name="Sprite" type="Sprite" parent="CanvasLayer/NewGameButton"]
+position = Vector2( 544, 408 )
+scale = Vector2( 0.462963, 0.462963 )
 texture = ExtResource( 4 )
+
+[node name="NewGame" parent="CanvasLayer/NewGameButton" instance=ExtResource( 1 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -143.0
+margin_top = 75.0
+margin_right = 217.0
+margin_bottom = 135.0
+
+[node name="ExitGameButton" type="Control" parent="CanvasLayer/NewGameButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit game" parent="CanvasLayer/NewGameButton/ExitGameButton" instance=ExtResource( 2 )]
+margin_left = 473.0
+margin_top = 477.0
+margin_right = 472.552
+margin_bottom = 477.0
+
+[node name="OptionsButton" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="options" parent="CanvasLayer/OptionsButton" instance=ExtResource( 3 )]
+margin_left = 259.0
+margin_top = 475.0
+margin_right = 258.552
+margin_bottom = 475.0
