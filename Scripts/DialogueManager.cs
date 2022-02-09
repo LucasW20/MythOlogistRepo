@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 /***
  * Manages speech popup to communicate orders to player.
- * @atuhor Benjamin_J_Bucheger
+ * @author Benjamin_J_Bucheger
  * @start 1-30-2022
  * @version 1-31-2022
  */
@@ -19,7 +19,7 @@ public class DialogueManager : Control
     private String ingredient_01 = "in_01_realGreekFire.png";
     private String ingredient_02 = "in_02_unicornHorn.png";
     private String drink = "dr_01_crunchy.png";
-    private String orderType = "vague"; // shows both ingredients
+    private String orderType = "drink"; // shows both ingredients
     
 
     // Called when the node enters the scene tree for the first time.

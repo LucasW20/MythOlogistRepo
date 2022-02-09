@@ -6,16 +6,16 @@ using System;
  * Handles the behavior when two ingredients are chosen
  * @author Lucas_C_Wright
  * @start 1-29-2022
- * @version 2-7-2022
+ * @version 2-4-2022
  */
-public class MixingBehaviour {
+public class MixingBehaviour : Node {
     //private List<Drink> drinkList = new List<Drink>();
     private Dictionary<Tuple<Ingredient, Ingredient>, Drink> drinkMap = new Dictionary<Tuple<Ingredient, Ingredient>, Drink>();
 
     // Called when the node enters the scene tree for the first time.
-    public MixingBehaviour() {
+    public override void _Ready() {
         GD.Print("Started MixingBehaviour");
-        loadList();
+	loadList();
     }
 
     private void loadList() {
