@@ -14,7 +14,7 @@ public class OrderSys : Node {
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready() {
-        speech = GetParent<InterfaceManager>().GetNode("DialogueManager") as DialogueManager;
+        speech = GetParent<Node2D>().GetNode<InterfaceManager>("InterfaceManager").GetNode<DialogueManager>("DialogueManager");
         mix = new MixingBehaviour();
         correctDrink = null;
 
