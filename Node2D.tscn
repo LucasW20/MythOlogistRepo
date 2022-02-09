@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://bar room screen/main screen.tscn" type="PackedScene" id=1]
-[ext_resource path="res://title_screen/titlescreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://BarRoomScreen/MainScreen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TitleScreen/titlescreen.tscn" type="PackedScene" id=2]
+
 
 [node name="Node2D" type="Node2D"]
 visible = false

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crunchy.png-67e30c38900a0ea7bb8ff86d143026d8.stex"
+path="res://.import/feathered serpent at counter.png-578f4959c909126dbef1b6907c6176f3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art assets/drinks/crunchy.png"
-dest_files=[ "res://.import/crunchy.png-67e30c38900a0ea7bb8ff86d143026d8.stex" ]
+source_file="res://Images/Characters/feathered serpent at counter.png"
+dest_files=[ "res://.import/feathered serpent at counter.png-578f4959c909126dbef1b6907c6176f3.stex" ]
 
 [params]
 

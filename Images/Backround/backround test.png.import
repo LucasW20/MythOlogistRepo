@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/forbidenFruit.png-8933b3aa229b2ca80e22a4513aa1606e.stex"
+path="res://.import/backround test.png-09fb227a1c347dc9e7ef2e2d4270a0a9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art assets/ingridents/forbidenFruit.png"
-dest_files=[ "res://.import/forbidenFruit.png-8933b3aa229b2ca80e22a4513aa1606e.stex" ]
+source_file="res://Images/Backround/backround test.png"
+dest_files=[ "res://.import/backround test.png-09fb227a1c347dc9e7ef2e2d4270a0a9.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/deadinside.png-b0b0b1446df3c9286cffe5e64d242190.stex"
+path="res://.import/background.png-9a8fd82b205c1f4f0d446ab793d4e1ec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art assets/drinks/deadinside.png"
-dest_files=[ "res://.import/deadinside.png-b0b0b1446df3c9286cffe5e64d242190.stex" ]
+source_file="res://Images/Backround/background.png"
+dest_files=[ "res://.import/background.png-9a8fd82b205c1f4f0d446ab793d4e1ec.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/smokeShow.png-8f1176c7d9fc816a050294f85cf9074c.stex"
+path="res://.import/UI.png-688c0bae06dba8e0670dc84c911dd090.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art assets/drinks/smokeShow.png"
-dest_files=[ "res://.import/smokeShow.png-8f1176c7d9fc816a050294f85cf9074c.stex" ]
+source_file="res://Images/Backround/UI.png"
+dest_files=[ "res://.import/UI.png-688c0bae06dba8e0670dc84c911dd090.stex" ]
 
 [params]
 
