@@ -10,7 +10,7 @@
 [ext_resource path="res://Images/Ingredients/in_01_realGreekFire.png" type="Texture" id=8]
 [ext_resource path="res://Images/Ingredients/in_07_soma.png" type="Texture" id=9]
 [ext_resource path="res://Images/Ingredients/in_02_unicornHorn.png" type="Texture" id=10]
-[ext_resource path="res://BarRoomScreen/drink panel.gd" type="Script" id=11]
+[ext_resource path="res://ff_2D.gd" type="Script" id=11]
 [ext_resource path="res://Images/Drinks/dr_02_deadinside.png" type="Texture" id=12]
 [ext_resource path="res://Images/speech_bubble.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/OrderSys.cs" type="Script" id=14]
@@ -19,227 +19,56 @@
 [ext_resource path="res://Scripts/MixingBehaviour.cs" type="Script" id=17]
 [ext_resource path="res://Scripts/DrinkData.cs" type="Script" id=18]
 
-[node name="MainScreen" type="Control"]
-margin_right = 1025.0
-margin_bottom = 600.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="MainScreen" type="Node2D"]
 
-[node name="Background" type="VBoxContainer" parent="."]
-anchor_right = 0.999
-anchor_bottom = 1.0
-margin_right = 0.0249023
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BackroundTest" type="Sprite" parent="Background"]
-position = Vector2( 512, 300 )
-scale = Vector2( 0.533333, 0.555556 )
-z_index = -1
-texture = ExtResource( 6 )
-
-[node name="Ui" type="Sprite" parent="Background/BackroundTest"]
-position = Vector2( 4.07696e-05, 2.65241e-05 )
-texture = ExtResource( 2 )
-
-[node name="DrinkSidePanel" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 725.0
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="drink_label1" type="Label" parent="DrinkSidePanel"]
-margin_right = 300.0
-margin_bottom = 14.0
-
-[node name="drink1" type="Button" parent="DrinkSidePanel/drink_label1"]
-margin_left = 189.0
-margin_top = 152.0
-margin_right = 271.0
-margin_bottom = 237.0
-action_mode = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ForbidenFruit" type="Sprite" parent="DrinkSidePanel/drink_label1"]
-position = Vector2( 230, 195 )
+[node name="ForbidenFruit" type="Sprite" parent="."]
+position = Vector2( 955, 195 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 3 )
+script = ExtResource( 11 )
 
-[node name="drink_label2" type="Label" parent="DrinkSidePanel"]
-margin_top = 18.0
-margin_right = 300.0
-margin_bottom = 32.0
-
-[node name="drink2" type="Button" parent="DrinkSidePanel/drink_label2"]
-margin_left = 73.0
-margin_top = 134.0
-margin_right = 155.0
-margin_bottom = 219.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BloodOfHeyZeus" type="Sprite" parent="DrinkSidePanel/drink_label2"]
-position = Vector2( 115, 175 )
+[node name="BloodOfHeyZeus" type="Sprite" parent="."]
+position = Vector2( 840, 193 )
 scale = Vector2( 0.5, 0.51 )
 z_index = 1
 texture = ExtResource( 4 )
 
-[node name="drink_label8" type="Label" parent="DrinkSidePanel"]
-margin_top = 36.0
-margin_right = 300.0
-margin_bottom = 50.0
-
-[node name="drink8" type="Button" parent="DrinkSidePanel/drink_label8"]
-margin_left = 189.0
-margin_top = 445.0
-margin_right = 271.0
-margin_bottom = 530.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="UnicornHorn" type="Sprite" parent="DrinkSidePanel/drink_label8"]
-position = Vector2( 230, 487 )
+[node name="UnicornHorn" type="Sprite" parent="."]
+position = Vector2( 955, 523 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 10 )
 
-[node name="drink_label7" type="Label" parent="DrinkSidePanel"]
-margin_top = 54.0
-margin_right = 300.0
-margin_bottom = 68.0
-
-[node name="drink7" type="Button" parent="DrinkSidePanel/drink_label7"]
-margin_left = 73.0
-margin_top = 427.0
-margin_right = 155.0
-margin_bottom = 512.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="StyxsSluge" type="Sprite" parent="DrinkSidePanel/drink_label7"]
-position = Vector2( 115, 470 )
+[node name="StyxsSluge" type="Sprite" parent="."]
+position = Vector2( 840, 524 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 1 )
 
-[node name="drink_label4" type="Label" parent="DrinkSidePanel"]
-margin_top = 72.0
-margin_right = 300.0
-margin_bottom = 86.0
-
-[node name="drink4" type="Button" parent="DrinkSidePanel/drink_label4"]
-margin_left = 189.0
-margin_top = 189.0
-margin_right = 271.0
-margin_bottom = 274.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="OrochiPoison" type="Sprite" parent="DrinkSidePanel/drink_label4"]
-position = Vector2( 230, 230 )
+[node name="OrochiPoison" type="Sprite" parent="."]
+position = Vector2( 955, 302 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 7 )
 
-[node name="drink_label3" type="Label" parent="DrinkSidePanel"]
-margin_top = 90.0
-margin_right = 300.0
-margin_bottom = 104.0
-
-[node name="drink3" type="Button" parent="DrinkSidePanel/drink_label3"]
-margin_left = 73.0
-margin_top = 172.0
-margin_right = 155.0
-margin_bottom = 256.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NewtEye" type="Sprite" parent="DrinkSidePanel/drink_label3"]
-position = Vector2( 115, 215 )
+[node name="NewtEye" type="Sprite" parent="."]
+position = Vector2( 840, 305 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 5 )
 
-[node name="drink_label6" type="Label" parent="DrinkSidePanel"]
-margin_top = 108.0
-margin_right = 300.0
-margin_bottom = 122.0
-
-[node name="drink6" type="Button" parent="DrinkSidePanel/drink_label6"]
-margin_left = 189.0
-margin_top = 263.0
-margin_right = 271.0
-margin_bottom = 348.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Soma" type="Sprite" parent="DrinkSidePanel/drink_label6"]
-position = Vector2( 230, 305 )
+[node name="Soma" type="Sprite" parent="."]
+position = Vector2( 955, 413 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 9 )
 
-[node name="drink_label5" type="Label" parent="DrinkSidePanel"]
-margin_top = 126.0
-margin_right = 300.0
-margin_bottom = 140.0
-
-[node name="drink5" type="Button" parent="DrinkSidePanel/drink_label5"]
-margin_left = 73.0
-margin_top = 245.0
-margin_right = 155.0
-margin_bottom = 330.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RealGreekFire" type="Sprite" parent="DrinkSidePanel/drink_label5"]
-position = Vector2( 115, 287 )
+[node name="RealGreekFire" type="Sprite" parent="."]
+position = Vector2( 840, 413 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 8 )
-
-[node name="GlassContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -149.5
-margin_top = -216.0
-margin_right = -49.5
-margin_bottom = -116.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CheckForGlass" type="Label" parent="GlassContainer"]
-margin_right = 100.0
-margin_bottom = 14.0
-
-[node name="GlassButton" type="Button" parent="GlassContainer/CheckForGlass"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -200.0
-margin_top = 50.0
-margin_right = 100.0
-margin_bottom = 136.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="SystemsNode" type="Node2D" parent="."]
 
@@ -255,7 +84,6 @@ __meta__ = {
 }
 
 [node name="Popup" type="Popup" parent="SystemsNode/InterfaceManager/DialogueManager"]
-visible = true
 anchor_left = 0.386
 anchor_top = 0.188
 anchor_right = 0.634
@@ -324,3 +152,21 @@ script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Background" type="VBoxContainer" parent="."]
+anchor_right = 0.999
+anchor_bottom = 1.0
+margin_right = 0.0249023
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackroundTest" type="Sprite" parent="Background"]
+position = Vector2( 512, 300 )
+scale = Vector2( 0.533333, 0.555556 )
+z_index = -1
+texture = ExtResource( 6 )
+
+[node name="Ui" type="Sprite" parent="Background/BackroundTest"]
+position = Vector2( 4.07696e-05, 2.65241e-05 )
+texture = ExtResource( 2 )
