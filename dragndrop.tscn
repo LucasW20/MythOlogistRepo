@@ -105,11 +105,13 @@ texture = ExtResource( 11 )
 position = Vector2( 7.50464, 1.80182 )
 texture = ExtResource( 12 )
 
-[node name="drinksmix" parent="." instance=ExtResource( 14 )]
-position = Vector2( 485, 514 )
+[node name="ffzone" parent="." instance=ExtResource( 14 )]
+visible = false
+position = Vector2( 960, 170 )
 
-[node name="ffzone" parent="." groups=["applearea"] instance=ExtResource( 14 )]
-position = Vector2( 957, 194 )
+[node name="drinksmix" parent="." groups=["mixspot"] instance=ExtResource( 14 )]
+visible = false
+position = Vector2( 340, 481 )
 
 [connection signal="input_event" from="ForbidenFruit/ff_2D" to="ForbidenFruit" method="_on_ff_2D_input_event"]
 [connection signal="input_event" from="work_on_later/BloodOfHeyZeus/bohz_2D" to="work_on_later/BloodOfHeyZeus" method="_on_bohz_2D_input_event"]
