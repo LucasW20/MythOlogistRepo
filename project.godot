@@ -14,6 +14,10 @@ config/name="MythMix"
 run/main_scene="res://Node2D-2.tscn"
 config/icon="res://Images/icon.png"
 
+[autoload]
+
+Mixer="*res://mixer.gd"
+
 [input]
 
 grab={
