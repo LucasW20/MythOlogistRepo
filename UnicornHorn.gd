@@ -1,14 +1,14 @@
 extends Sprite
 
 
-var fruitjuice = preload("res://Images/Drinks/dr_15_zeusJuice.png")
+var fruitjuice = preload("res://Images/Drinks/dr_22_glitterGlue.png")
 onready var fruit = get_node(".")
 var selected = false
 var rest_point
 var rest_nodes = []
 
 func _ready():
-	rest_nodes = get_tree().get_nodes_in_group("bohzzone")
+	rest_nodes = get_tree().get_nodes_in_group("ghzone")
 	
 	rest_point = rest_nodes[0].global_position
 	rest_nodes[0].select()
@@ -23,10 +23,11 @@ func _physics_process(delta):
 		global_position= lerp(global_position, rest_point, 10 * delta)
 
 
-func _on_bohz_2D_input_event(viewport, event, shape_idx):
+func _on_uh2D_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("grab"):
 		print("working")
 		selected = true
+
 
 func _input(event):
 	if event is InputEventMouseButton:

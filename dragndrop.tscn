@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://ff2D.gd" type="Script" id=1]
 [ext_resource path="res://Images/Ingredients/in_08_forbiddenFruit.png" type="Texture" id=2]
@@ -9,16 +9,47 @@
 [ext_resource path="res://Images/Ingredients/in_07_soma.png" type="Texture" id=7]
 [ext_resource path="res://Images/Ingredients/in_01_realGreekFire.png" type="Texture" id=8]
 [ext_resource path="res://Images/Ingredients/in_05_styxSluge.png" type="Texture" id=9]
+[ext_resource path="res://bohzzone.gd" type="Script" id=10]
 [ext_resource path="res://Images/Backround/background.png" type="Texture" id=11]
 [ext_resource path="res://Images/Backround/UI.png" type="Texture" id=12]
 [ext_resource path="res://bohzdrop.gd" type="Script" id=13]
 [ext_resource path="res://BarRoomScreen/dropzone.tscn" type="PackedScene" id=14]
+[ext_resource path="res://UnicornHorn.gd" type="Script" id=15]
+[ext_resource path="res://ghzone.gd" type="Script" id=16]
+[ext_resource path="res://StyxsSluge.gd" type="Script" id=17]
+[ext_resource path="res://sszone.gd" type="Script" id=18]
+[ext_resource path="res://OrochiPoison.gd" type="Script" id=19]
+[ext_resource path="res://RealGreekFire.gd" type="Script" id=20]
+[ext_resource path="res://Soma.gd" type="Script" id=21]
+[ext_resource path="res://NewtEye.gd" type="Script" id=22]
+[ext_resource path="res://nezone.gd" type="Script" id=23]
+[ext_resource path="res://opzone.gd" type="Script" id=24]
+[ext_resource path="res://gfzone.gd" type="Script" id=25]
+[ext_resource path="res://sozone.gd" type="Script" id=26]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 80.0
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 90.0
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 100.0
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 60.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -55,36 +86,73 @@ position = Vector2( 960, 520 )
 scale = Vector2( 0.470833, 0.577845 )
 z_index = 1
 texture = ExtResource( 6 )
+script = ExtResource( 15 )
+
+[node name="uh2D" type="Area2D" parent="work_on_later/UnicornHorn"]
+
+[node name="csuh2D" type="CollisionShape2D" parent="work_on_later/UnicornHorn/uh2D"]
+shape = SubResource( 3 )
 
 [node name="StyxsSluge" type="Sprite" parent="work_on_later"]
 position = Vector2( 847, 520 )
 scale = Vector2( 0.45, 0.54 )
 z_index = 1
 texture = ExtResource( 9 )
+script = ExtResource( 17 )
+
+[node name="ss2D" type="Area2D" parent="work_on_later/StyxsSluge"]
+
+[node name="csss2D" type="CollisionShape2D" parent="work_on_later/StyxsSluge/ss2D"]
+shape = SubResource( 4 )
 
 [node name="OrochiPoison" type="Sprite" parent="work_on_later"]
 position = Vector2( 960, 410 )
 scale = Vector2( 0.38, 0.572417 )
 z_index = 1
 texture = ExtResource( 4 )
+script = ExtResource( 19 )
+
+[node name="op2D" type="Area2D" parent="work_on_later/OrochiPoison"]
+
+[node name="opcs2D" type="CollisionShape2D" parent="work_on_later/OrochiPoison/op2D"]
+shape = SubResource( 5 )
 
 [node name="NewtEye" type="Sprite" parent="work_on_later"]
 position = Vector2( 845, 415 )
 scale = Vector2( 0.38, 0.572417 )
 z_index = 1
 texture = ExtResource( 3 )
+script = ExtResource( 22 )
+
+[node name="ne2D" type="Area2D" parent="work_on_later/NewtEye"]
+
+[node name="csne2D" type="CollisionShape2D" parent="work_on_later/NewtEye/ne2D"]
+shape = SubResource( 6 )
 
 [node name="RealGreekFire" type="Sprite" parent="work_on_later"]
 position = Vector2( 845, 303 )
 scale = Vector2( 0.323335, 0.487059 )
 z_index = 1
 texture = ExtResource( 8 )
+script = ExtResource( 20 )
+
+[node name="gf2D" type="Area2D" parent="work_on_later/RealGreekFire"]
+
+[node name="csgf2D" type="CollisionShape2D" parent="work_on_later/RealGreekFire/gf2D"]
+shape = SubResource( 7 )
 
 [node name="Soma" type="Sprite" parent="work_on_later"]
 position = Vector2( 960, 285 )
 scale = Vector2( 0.501667, 0.755691 )
 z_index = 1
 texture = ExtResource( 7 )
+script = ExtResource( 21 )
+
+[node name="so2D" type="Area2D" parent="work_on_later/Soma"]
+
+[node name="csso2D" type="CollisionShape2D" parent="work_on_later/Soma/so2D"]
+position = Vector2( 0, 20 )
+shape = SubResource( 8 )
 
 [node name="Node2D" type="Node2D" parent="work_on_later"]
 
@@ -109,9 +177,50 @@ texture = ExtResource( 12 )
 visible = false
 position = Vector2( 960, 170 )
 
-[node name="drinksmix" parent="." groups=["mixspot"] instance=ExtResource( 14 )]
+[node name="bohzzone" type="Position2D" parent="." groups=["bohzzone"]]
+visible = false
+position = Vector2( 845, 195 )
+script = ExtResource( 10 )
+
+[node name="ghzone" type="Position2D" parent="." groups=["ghzone"]]
+visible = false
+position = Vector2( 960, 520 )
+script = ExtResource( 16 )
+
+[node name="sszone" type="Position2D" parent="." groups=["sszone"]]
+visible = false
+position = Vector2( 845, 520 )
+script = ExtResource( 18 )
+
+[node name="nezone" type="Position2D" parent="." groups=["nezone"]]
+visible = false
+position = Vector2( 845, 415 )
+script = ExtResource( 23 )
+
+[node name="opzone" type="Position2D" parent="." groups=["opzone"]]
+visible = false
+position = Vector2( 960, 410 )
+script = ExtResource( 24 )
+
+[node name="sozone" type="Position2D" parent="." groups=["sozone"]]
+visible = false
+position = Vector2( 960, 280 )
+script = ExtResource( 26 )
+
+[node name="gfzone" type="Position2D" parent="." groups=["gfzone"]]
+visible = false
+position = Vector2( 845, 300 )
+script = ExtResource( 25 )
+
+[node name="drinksmix" parent="." groups=["bohzzone", "gfzone", "ghzone", "mixspot", "nezone", "opzone", "sozone", "sszone"] instance=ExtResource( 14 )]
 visible = false
 position = Vector2( 340, 481 )
 
 [connection signal="input_event" from="ForbidenFruit/ff_2D" to="ForbidenFruit" method="_on_ff_2D_input_event"]
 [connection signal="input_event" from="work_on_later/BloodOfHeyZeus/bohz_2D" to="work_on_later/BloodOfHeyZeus" method="_on_bohz_2D_input_event"]
+[connection signal="input_event" from="work_on_later/UnicornHorn/uh2D" to="work_on_later/UnicornHorn" method="_on_uh2D_input_event"]
+[connection signal="input_event" from="work_on_later/StyxsSluge/ss2D" to="work_on_later/StyxsSluge" method="_on_ss2D_input_event"]
+[connection signal="input_event" from="work_on_later/OrochiPoison/op2D" to="work_on_later/OrochiPoison" method="_on_op2D_input_event"]
+[connection signal="input_event" from="work_on_later/NewtEye/ne2D" to="work_on_later/NewtEye" method="_on_ne2D_input_event"]
+[connection signal="input_event" from="work_on_later/RealGreekFire/gf2D" to="work_on_later/RealGreekFire" method="_on_gf2D_input_event"]
+[connection signal="input_event" from="work_on_later/Soma/so2D" to="work_on_later/Soma" method="_on_so2D_input_event"]
