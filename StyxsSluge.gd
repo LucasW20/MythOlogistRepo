@@ -1,15 +1,19 @@
 extends Sprite
 
 
-var fruitjuice = preload("res://Images/Drinks/dr_21_styxSludgeJuice.png")
-onready var fruit = get_node(".")
+var sludgejuice = preload("res://Images/Drinks/dr_21_styxSludgeJuice.png")
+var normalsludge = preload("res://Images/Ingredients/in_05_styxSluge.png")
+onready var sludge = get_node(".")
 var selected = false
+var main_point
 var rest_point
 var rest_nodes = []
+var main_nodes = []
 
 func _ready():
 	rest_nodes = get_tree().get_nodes_in_group("sszone")
-	
+	main_nodes = get_tree().get_nodes_in_group("ssmain")
+	main_point = main_nodes[0].global_position
 	rest_point = rest_nodes[0].global_position
 	rest_nodes[0].select()
 
@@ -41,5 +45,7 @@ func _input(event):
 					child.select()
 					rest_point = child.global_position
 					shortest_dist = distance
-					fruit.set_texture(fruitjuice)
+					sludge.set_texture(sludgejuice)
+					if rest_point == main_point:
+						sludge.set_texture(normalsludge)
 		

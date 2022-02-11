@@ -173,41 +173,41 @@ texture = ExtResource( 11 )
 position = Vector2( 7.50464, 1.80182 )
 texture = ExtResource( 12 )
 
-[node name="ffzone" parent="." instance=ExtResource( 14 )]
+[node name="ffzone" parent="." groups=["ffmain"] instance=ExtResource( 14 )]
 visible = false
 position = Vector2( 960, 170 )
 
-[node name="bohzzone" type="Position2D" parent="." groups=["bohzzone"]]
+[node name="bohzzone" type="Position2D" parent="." groups=["bohzmain", "bohzzone"]]
 visible = false
 position = Vector2( 845, 195 )
 script = ExtResource( 10 )
 
-[node name="ghzone" type="Position2D" parent="." groups=["ghzone"]]
+[node name="ghzone" type="Position2D" parent="." groups=["ghmain", "ghzone"]]
 visible = false
 position = Vector2( 960, 520 )
 script = ExtResource( 16 )
 
-[node name="sszone" type="Position2D" parent="." groups=["sszone"]]
+[node name="sszone" type="Position2D" parent="." groups=["ssmain", "sszone"]]
 visible = false
 position = Vector2( 845, 520 )
 script = ExtResource( 18 )
 
-[node name="nezone" type="Position2D" parent="." groups=["nezone"]]
+[node name="nezone" type="Position2D" parent="." groups=["nemain", "nezone"]]
 visible = false
 position = Vector2( 845, 415 )
 script = ExtResource( 23 )
 
-[node name="opzone" type="Position2D" parent="." groups=["opzone"]]
+[node name="opzone" type="Position2D" parent="." groups=["opmain", "opzone"]]
 visible = false
 position = Vector2( 960, 410 )
 script = ExtResource( 24 )
 
-[node name="sozone" type="Position2D" parent="." groups=["sozone"]]
+[node name="sozone" type="Position2D" parent="." groups=["somain", "sozone"]]
 visible = false
 position = Vector2( 960, 280 )
 script = ExtResource( 26 )
 
-[node name="gfzone" type="Position2D" parent="." groups=["gfzone"]]
+[node name="gfzone" type="Position2D" parent="." groups=["gfmain", "gfzone"]]
 visible = false
 position = Vector2( 845, 300 )
 script = ExtResource( 25 )

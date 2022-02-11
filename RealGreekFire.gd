@@ -2,15 +2,19 @@ extends Sprite
 
 
 
-var fruitjuice = preload("res://Images/Drinks/dr_17_greekFireJuice.png")
-onready var fruit = get_node(".")
+var firejuice = preload("res://Images/Drinks/dr_17_greekFireJuice.png")
+var normalfire = preload("res://Images/Ingredients/in_01_realGreekFire.png")
+onready var fire = get_node(".")
 var selected = false
+var main_point
+var main_nodes = []
 var rest_point
 var rest_nodes = []
 
 func _ready():
 	rest_nodes = get_tree().get_nodes_in_group("gfzone")
-	
+	main_nodes = get_tree().get_nodes_in_group("gfmain")
+	main_point = main_nodes[0].global_position
 	rest_point = rest_nodes[0].global_position
 	rest_nodes[0].select()
 
@@ -24,6 +28,7 @@ func _physics_process(delta):
 
 func _on_gf2D_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("grab"):
+		print(name)
 		print("working")
 		selected = true
 
@@ -38,8 +43,10 @@ func _input(event):
 					child.select()
 					rest_point = child.global_position
 					shortest_dist = distance
-					print(name)
-					fruit.set_texture(fruitjuice)
+					fire.set_texture(firejuice)
+					if main_point == rest_point:
+						fire.set_texture(normalfire)
+						
 		
 
 

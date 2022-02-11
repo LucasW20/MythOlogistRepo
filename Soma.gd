@@ -1,15 +1,19 @@
 extends Sprite
 
 
-var fruitjuice = preload("res://Images/Drinks/dr_20_somaJuice.png")
-onready var fruit = get_node(".")
+var somajuice = preload("res://Images/Drinks/dr_20_somaJuice.png")
+var normalsoma = preload("res://Images/Ingredients/in_07_soma.png")
+onready var soma = get_node(".")
 var selected = false
+var main_point
+var main_nodes = []
 var rest_point
 var rest_nodes = []
 
 func _ready():
 	rest_nodes = get_tree().get_nodes_in_group("sozone")
-	
+	main_nodes = get_tree().get_nodes_in_group("somain")
+	main_point = main_nodes[0].global_position
 	rest_point = rest_nodes[0].global_position
 	rest_nodes[0].select()
 
@@ -23,6 +27,7 @@ func _physics_process(delta):
 
 func _on_so2D_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("grab"):
+		print(name)
 		print("working")
 		selected = true
 
@@ -37,8 +42,9 @@ func _input(event):
 					child.select()
 					rest_point = child.global_position
 					shortest_dist = distance
-					print(name)
-					fruit.set_texture(fruitjuice)
+					soma.set_texture(somajuice)
+					if main_point == rest_point:
+						soma.set_texture(normalsoma)
 		
 
 
