@@ -16,17 +16,17 @@ public class DialogueManager : Control
 
     // TEST VARIABLES
     
-    private String ingredient_01 = "in_01_realGreekFire.png";
-    private String ingredient_02 = "in_02_unicornHorn.png";
-    private String drink = "dr_01_crunchy.png";
-    private String orderType = "drink"; // shows both ingredients
+//    private String ingredient_01 = "in_01_realGreekFire.png";
+//    private String ingredient_02 = "in_02_unicornHorn.png";
+//    private String drink = "dr_01_crunchy.png";
+//    private String orderType = "drink"; // shows both ingredients
     
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         // test case
-        ShowDialogueElement(ingredient_01, ingredient_02, drink, orderType);
+        //ShowDialogueElement(ingredient_01, ingredient_02, drink, orderType);
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.

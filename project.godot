@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="MythMix"
-run/main_scene="res://Node2D-2.tscn"
+run/main_scene="res://TitleScreen/titlescreen.tscn"
 config/icon="res://Images/icon.png"
+
+[autoload]
+
+SceneChanger="*res://SceneChanger.tscn"
 
 [physics]
 

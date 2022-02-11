@@ -26,7 +26,6 @@
 [node name="Background" type="VBoxContainer" parent="."]
 anchor_right = 0.999
 anchor_bottom = 1.0
-margin_right = 0.0249023
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -220,12 +219,13 @@ margin_right = 100.0
 margin_bottom = 14.0
 
 [node name="GlassButton" type="Button" parent="GlassContainer/CheckForGlass"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -200.0
-margin_top = 50.0
-margin_right = 100.0
-margin_bottom = 136.0
+anchor_left = 2.925
+anchor_top = 46.429
+anchor_right = 6.925
+anchor_bottom = 53.571
+margin_left = -3.05176e-05
+margin_top = -0.00598145
+margin_bottom = 0.00598145
 __meta__ = {
 "_edit_use_anchors_": false
 }
