@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/apollo at counter.png-f86099ab9a69ad232d7daa80db23328c.stex"
+path="res://.import/apollo.png-bd2d0aa007f2b768c459a9617895660b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Characters/apollo at counter.png"
-dest_files=[ "res://.import/apollo at counter.png-f86099ab9a69ad232d7daa80db23328c.stex" ]
+source_file="res://Images/Characters/apollo.png"
+dest_files=[ "res://.import/apollo.png-bd2d0aa007f2b768c459a9617895660b.stex" ]
 
 [params]
 

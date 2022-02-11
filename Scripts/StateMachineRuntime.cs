@@ -80,10 +80,34 @@ public abstract class StateMachineRuntime : Node {
 
     private void ArriveLogic() {
         //create a new character (maybe randomized to decide the image used)
-        GetNode<Sprite>("CharacterSprite").Texture = ResourceLoader.Load("res://Images/Characters") as Texture;
+        Random rand = new Random();
+        int charType = rand.Next(0, 2);
+        string chType;
+
+        switch (charType) {
+            case 0:
+                chType = "apollo.png";
+                break;
+            case 1:
+                chType = "serpent.png";
+                break;
+            case 2:
+                chType = "unicorn.png";
+                break;
+            default:
+                GD.Print("ArriveLogic Random Number not valid result! Defaulting to Apollo.");
+                chType = "apollo.png";
+                break;
+        }
+
+        Sprite charSprite = GetNode<Sprite>("CharacterSprite");
+        charSprite.Texture = ResourceLoader.Load("res://Images/Characters/" + chType) as Texture;
 
         //have the new character 'walk' on screen
+        MoveSprite(charSprite, chType);
+
         //change to the next state
+        NextState();
     }
 
     private void OrderLogic() {
@@ -94,5 +118,11 @@ public abstract class StateMachineRuntime : Node {
         //move the character off screen and then delete them
         //add points to point total (only if we do a points thingy)
         //change to the first state
+    }
+
+    async private void MoveSprite(Sprite ch, string chType) {
+        for (float i = ch.Transform.x.x, i < ) {
+
+        }
     }
 }

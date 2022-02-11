@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/feathered serpent at counter.png-578f4959c909126dbef1b6907c6176f3.stex"
+path="res://.import/serpent.png-6b92fb972a7e3a1494cb9aec2dde1592.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Characters/feathered serpent at counter.png"
-dest_files=[ "res://.import/feathered serpent at counter.png-578f4959c909126dbef1b6907c6176f3.stex" ]
+source_file="res://Images/Characters/serpent.png"
+dest_files=[ "res://.import/serpent.png-6b92fb972a7e3a1494cb9aec2dde1592.stex" ]
 
 [params]
 
