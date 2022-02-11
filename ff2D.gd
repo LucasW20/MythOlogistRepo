@@ -29,7 +29,7 @@ func _physics_process(delta):
 	else:
 		global_position= lerp(global_position, rest_point, 10 * delta)
 
-func _on_ff_2D_input_event(viewport, event, shape_idx):
+func _on_Area2D_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("grab"):
 		
 		Fname = name
@@ -55,3 +55,6 @@ func _input(event):
 					
 						
 		
+
+
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://ff2D.gd" type="Script" id=1]
 [ext_resource path="res://Images/Ingredients/in_08_forbiddenFruit.png" type="Texture" id=2]
@@ -27,6 +27,13 @@
 [ext_resource path="res://gfzone.gd" type="Script" id=25]
 [ext_resource path="res://sozone.gd" type="Script" id=26]
 [ext_resource path="res://mixer.gd" type="Script" id=27]
+[ext_resource path="res://Scripts/DialogueManager.cs" type="Script" id=28]
+[ext_resource path="res://Scripts/DrinkData.cs" type="Script" id=29]
+[ext_resource path="res://Scripts/InterfaceManager.cs" type="Script" id=30]
+[ext_resource path="res://Scripts/MixingBehaviour.cs" type="Script" id=31]
+[ext_resource path="res://Scripts/OrderSys.cs" type="Script" id=32]
+[ext_resource path="res://Images/speech_bubble.png" type="Texture" id=33]
+[ext_resource path="res://Images/Drinks/dr_02_deadinside.png" type="Texture" id=34]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 80.0
@@ -52,7 +59,7 @@ radius = 100.0
 [sub_resource type="CircleShape2D" id=8]
 radius = 60.0
 
-[node name="Node2D" type="Node2D"]
+[node name="working dragndrop" type="Node2D"]
 script = ExtResource( 27 )
 
 [node name="ForbidenFruit" type="Sprite" parent="."]
@@ -217,6 +224,90 @@ script = ExtResource( 25 )
 [node name="drinksmix" parent="." groups=["bohzzone", "gfzone", "ghzone", "mixspot", "nezone", "opzone", "sozone", "sszone", "zoneff"] instance=ExtResource( 14 )]
 visible = false
 position = Vector2( 340, 481 )
+
+[node name="SystemsNode" type="Node2D" parent="."]
+
+[node name="InterfaceManager" type="CanvasLayer" parent="SystemsNode"]
+script = ExtResource( 30 )
+
+[node name="DialogueManager" type="Control" parent="SystemsNode/InterfaceManager"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup" type="Popup" parent="SystemsNode/InterfaceManager/DialogueManager"]
+anchor_left = 0.386
+anchor_top = 0.188
+anchor_right = 0.634
+anchor_bottom = 0.5
+margin_left = -0.264008
+margin_top = 0.199997
+margin_right = -0.216003
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeechBubble" type="Sprite" parent="SystemsNode/InterfaceManager/DialogueManager/Popup"]
+position = Vector2( 136, 114 )
+scale = Vector2( 0.365625, 0.29062 )
+texture = ExtResource( 33 )
+
+[node name="Ingredient01" type="Sprite" parent="SystemsNode/InterfaceManager/DialogueManager/Popup"]
+visible = false
+position = Vector2( 67, 83 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Ingredient02" type="Sprite" parent="SystemsNode/InterfaceManager/DialogueManager/Popup"]
+visible = false
+position = Vector2( 190, 83 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="PlusSign" type="Label" parent="SystemsNode/InterfaceManager/DialogueManager/Popup"]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 112.0
+margin_top = 58.0
+margin_right = 122.0
+margin_bottom = 72.0
+rect_scale = Vector2( 4, 4 )
+text = "+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drink" type="Sprite" parent="SystemsNode/InterfaceManager/DialogueManager/Popup"]
+visible = false
+position = Vector2( 131, 87 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 34 )
+
+[node name="DrinkData" type="Node2D" parent="SystemsNode"]
+script = ExtResource( 29 )
+
+[node name="Order Sytem" type="Control" parent="SystemsNode"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mixing" type="Control" parent="SystemsNode"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="input_event" from="ForbidenFruit/ff_2D" to="ForbidenFruit" method="_on_ff_2D_input_event"]
 [connection signal="input_event" from="work_on_later/BloodOfHeyZeus/bohz_2D" to="work_on_later/BloodOfHeyZeus" method="_on_bohz_2D_input_event"]

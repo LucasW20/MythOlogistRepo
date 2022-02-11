@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Images/Ingredients/in_05_styxSluge.png" type="Texture" id=1]
 [ext_resource path="res://Images/Backround/UI.png" type="Texture" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://Images/Ingredients/in_01_realGreekFire.png" type="Texture" id=8]
 [ext_resource path="res://Images/Ingredients/in_07_soma.png" type="Texture" id=9]
 [ext_resource path="res://Images/Ingredients/in_02_unicornHorn.png" type="Texture" id=10]
-[ext_resource path="res://ff_2D.gd" type="Script" id=11]
+[ext_resource path="res://BarRoomScreen/dropzone.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Images/Drinks/dr_02_deadinside.png" type="Texture" id=12]
 [ext_resource path="res://Images/speech_bubble.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/OrderSys.cs" type="Script" id=14]
@@ -18,6 +18,45 @@
 [ext_resource path="res://Scripts/DialogueManager.cs" type="Script" id=16]
 [ext_resource path="res://Scripts/MixingBehaviour.cs" type="Script" id=17]
 [ext_resource path="res://Scripts/DrinkData.cs" type="Script" id=18]
+[ext_resource path="res://ff2D.gd" type="Script" id=19]
+[ext_resource path="res://gfzone.gd" type="Script" id=20]
+[ext_resource path="res://bohzzone.gd" type="Script" id=21]
+[ext_resource path="res://opzone.gd" type="Script" id=22]
+[ext_resource path="res://ghzone.gd" type="Script" id=23]
+[ext_resource path="res://sozone.gd" type="Script" id=24]
+[ext_resource path="res://sszone.gd" type="Script" id=25]
+[ext_resource path="res://nezone.gd" type="Script" id=26]
+[ext_resource path="res://bohzdrop.gd" type="Script" id=27]
+[ext_resource path="res://UnicornHorn.gd" type="Script" id=28]
+[ext_resource path="res://RealGreekFire.gd" type="Script" id=29]
+[ext_resource path="res://NewtEye.gd" type="Script" id=30]
+[ext_resource path="res://Soma.gd" type="Script" id=31]
+[ext_resource path="res://StyxsSluge.gd" type="Script" id=32]
+[ext_resource path="res://OrochiPoison.gd" type="Script" id=33]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 80.0
 
 [node name="MainScreen" type="Node2D"]
 
@@ -26,49 +65,96 @@ position = Vector2( 955, 195 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 3 )
-script = ExtResource( 11 )
+script = ExtResource( 19 )
+
+[node name="Area2D" type="Area2D" parent="ForbidenFruit"]
+
+[node name="ff_cs2D" type="CollisionShape2D" parent="ForbidenFruit/Area2D"]
+shape = SubResource( 1 )
 
 [node name="BloodOfHeyZeus" type="Sprite" parent="."]
 position = Vector2( 840, 193 )
 scale = Vector2( 0.5, 0.51 )
 z_index = 1
 texture = ExtResource( 4 )
+script = ExtResource( 27 )
+
+[node name="bohz_2D" type="Area2D" parent="BloodOfHeyZeus"]
+
+[node name="bohz_cs2D" type="CollisionShape2D" parent="BloodOfHeyZeus/bohz_2D"]
+shape = SubResource( 2 )
 
 [node name="UnicornHorn" type="Sprite" parent="."]
 position = Vector2( 955, 523 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 10 )
+script = ExtResource( 28 )
+
+[node name="uh2D" type="Area2D" parent="UnicornHorn"]
+
+[node name="csuh2D" type="CollisionShape2D" parent="UnicornHorn/uh2D"]
+shape = SubResource( 3 )
 
 [node name="StyxsSluge" type="Sprite" parent="."]
 position = Vector2( 840, 524 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 1 )
+script = ExtResource( 32 )
+
+[node name="ss2D" type="Area2D" parent="StyxsSluge"]
+
+[node name="csss2D" type="CollisionShape2D" parent="StyxsSluge/ss2D"]
+shape = SubResource( 4 )
 
 [node name="OrochiPoison" type="Sprite" parent="."]
 position = Vector2( 955, 302 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 7 )
+script = ExtResource( 33 )
+
+[node name="op2D" type="Area2D" parent="OrochiPoison"]
+
+[node name="csop2D" type="CollisionShape2D" parent="OrochiPoison/op2D"]
+shape = SubResource( 5 )
 
 [node name="NewtEye" type="Sprite" parent="."]
 position = Vector2( 840, 305 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 5 )
+script = ExtResource( 30 )
+
+[node name="ne2D" type="Area2D" parent="NewtEye"]
+
+[node name="csne2D" type="CollisionShape2D" parent="NewtEye/ne2D"]
+shape = SubResource( 6 )
 
 [node name="Soma" type="Sprite" parent="."]
 position = Vector2( 955, 413 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 9 )
+script = ExtResource( 31 )
+
+[node name="so2D" type="Area2D" parent="Soma"]
+
+[node name="csso2D" type="CollisionShape2D" parent="Soma/so2D"]
+shape = SubResource( 7 )
 
 [node name="RealGreekFire" type="Sprite" parent="."]
 position = Vector2( 840, 413 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 8 )
+script = ExtResource( 29 )
+
+[node name="gf2D" type="Area2D" parent="RealGreekFire"]
+
+[node name=",csgf2D" type="CollisionShape2D" parent="RealGreekFire/gf2D"]
+shape = SubResource( 8 )
 
 [node name="SystemsNode" type="Node2D" parent="."]
 
@@ -78,6 +164,7 @@ script = ExtResource( 15 )
 [node name="DialogueManager" type="Control" parent="SystemsNode/InterfaceManager"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -170,3 +257,55 @@ texture = ExtResource( 6 )
 [node name="Ui" type="Sprite" parent="Background/BackroundTest"]
 position = Vector2( 4.07696e-05, 2.65241e-05 )
 texture = ExtResource( 2 )
+
+[node name="ffzone" parent="Background" groups=["ffmain", "zoneff"] instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 957, 193 )
+
+[node name="bohzzone" type="Position2D" parent="Background" groups=["bohzmain", "bohzzone"]]
+visible = false
+position = Vector2( 841, 199 )
+script = ExtResource( 21 )
+
+[node name="uhzone" type="Position2D" parent="Background" groups=["ghmain", "ghzone"]]
+visible = false
+position = Vector2( 952, 525 )
+script = ExtResource( 23 )
+
+[node name="sszone" type="Position2D" parent="Background" groups=["ssmain", "sszone"]]
+visible = false
+position = Vector2( 845, 520 )
+script = ExtResource( 25 )
+
+[node name="nezone" type="Position2D" parent="Background" groups=["nemain", "nezone"]]
+visible = false
+position = Vector2( 843, 303 )
+script = ExtResource( 26 )
+
+[node name="opzone" type="Position2D" parent="Background" groups=["opmain", "opzone"]]
+visible = false
+position = Vector2( 954, 304 )
+script = ExtResource( 22 )
+
+[node name="sozone" type="Position2D" parent="Background" groups=["somain", "sozone"]]
+visible = false
+position = Vector2( 954, 414 )
+script = ExtResource( 24 )
+
+[node name="gfzone" type="Position2D" parent="Background" groups=["gfmain", "gfzone"]]
+visible = false
+position = Vector2( 839, 418 )
+script = ExtResource( 20 )
+
+[node name="drinksmix" parent="Background" groups=["bohzzone", "gfzone", "ghzone", "mixspot", "nezone", "opzone", "sozone", "sszone", "zoneff"] instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 340, 481 )
+
+[connection signal="input_event" from="ForbidenFruit/Area2D" to="ForbidenFruit" method="_on_Area2D_input_event"]
+[connection signal="input_event" from="BloodOfHeyZeus/bohz_2D" to="BloodOfHeyZeus" method="_on_bohz_2D_input_event"]
+[connection signal="input_event" from="UnicornHorn/uh2D" to="UnicornHorn" method="_on_uh2D_input_event"]
+[connection signal="input_event" from="StyxsSluge/ss2D" to="StyxsSluge" method="_on_ss2D_input_event"]
+[connection signal="input_event" from="OrochiPoison/op2D" to="OrochiPoison" method="_on_op2D_input_event"]
+[connection signal="input_event" from="NewtEye/ne2D" to="NewtEye" method="_on_ne2D_input_event"]
+[connection signal="input_event" from="Soma/so2D" to="Soma" method="_on_so2D_input_event"]
+[connection signal="input_event" from="RealGreekFire/gf2D" to="RealGreekFire" method="_on_gf2D_input_event"]

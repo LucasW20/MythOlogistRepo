@@ -104,7 +104,7 @@ public abstract class StateMachineRuntime : Node {
 		charSprite.Texture = ResourceLoader.Load("res://Images/Characters/" + chType) as Texture;
 
 		//have the new character 'walk' on screen
-		MoveSprite(charSprite, chType);
+		//MoveSprite(charSprite, chType);
 
 		//change to the next state
 		NextState();
