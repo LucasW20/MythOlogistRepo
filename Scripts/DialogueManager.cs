@@ -99,7 +99,7 @@ public class DialogueManager : Control
 				// change first ingredient sprite to match ingredient
 
 				// TODO - select shown ingredient at random
-				GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/Ingredients/"+drink.getFirstIng()) as Texture;
+				GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/Ingredients/"+drink.getFirstIng().getKeyword()) as Texture;
 
 				// make first ingredient sprite and label visible
 				GetNode<Sprite>("Popup/Ingredient01").Visible = true;

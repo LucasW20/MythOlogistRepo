@@ -37,4 +37,8 @@ public class Drink {
 	public string getDrinkKeyword() { return keyword; }
 	public Ingredient getFirstIng() { return ing1; }
 	public Ingredient getSecondIng() { return ing2; }
+
+	public void printDrinkToConsole() {
+		GD.Print("Ingredient 1: " + ing1.getKeyword() + " Ingredient 2: " + ing2.getKeyword() + " Drink: " + keyword);
+    }
 }

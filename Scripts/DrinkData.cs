@@ -79,7 +79,7 @@ public class DrinkData : Node
         // Read through List and use string to make new Ingredient objects
         // and load objects into _ingredientList
         foreach (string txt in text) {
-            Ingredient tempIng = new Ingredient(txt+"png");
+            Ingredient tempIng = new Ingredient(txt+".png");
             _ingredientList.Add(tempIng);
         }
         GD.Print("Ingredient list count: " + _ingredientList.Count()); // TEST LINE
@@ -109,7 +109,8 @@ public class DrinkData : Node
                 }
             }
 
-            Drink tempDrink = new Drink(text[0]+"png", tempIng1, tempIng2);
+            Drink tempDrink = new Drink(text[0]+".png", tempIng1, tempIng2);
+            tempDrink.printDrinkToConsole();
             _drinkList.Add(tempDrink);
         }
         GD.Print("Drink list count: " + _drinkList.Count()); // TEST LINE

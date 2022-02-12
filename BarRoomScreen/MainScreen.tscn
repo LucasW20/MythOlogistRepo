@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Images/Ingredients/in_05_styxSluge.png" type="Texture" id=1]
 [ext_resource path="res://Images/Backround/UI.png" type="Texture" id=2]
@@ -33,6 +33,7 @@
 [ext_resource path="res://Soma.gd" type="Script" id=31]
 [ext_resource path="res://StyxsSluge.gd" type="Script" id=32]
 [ext_resource path="res://OrochiPoison.gd" type="Script" id=33]
+[ext_resource path="res://Scripts/StateMachineRuntime.cs" type="Script" id=34]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 80.0
@@ -224,7 +225,7 @@ texture = ExtResource( 12 )
 [node name="DrinkData" type="Node2D" parent="SystemsNode"]
 script = ExtResource( 18 )
 
-[node name="Order Sytem" type="Control" parent="SystemsNode"]
+[node name="Order System" type="Control" parent="SystemsNode"]
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 14 )
@@ -239,6 +240,22 @@ script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="State Machine" type="Control" parent="SystemsNode"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 34 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="SystemsNode/State Machine"]
+wait_time = 0.01
+one_shot = true
+
+[node name="CharacterSprite" type="Sprite" parent="SystemsNode/State Machine"]
+position = Vector2( -289, 309 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Background" type="VBoxContainer" parent="."]
 anchor_right = 0.999
@@ -309,3 +326,4 @@ position = Vector2( 340, 481 )
 [connection signal="input_event" from="NewtEye/ne2D" to="NewtEye" method="_on_ne2D_input_event"]
 [connection signal="input_event" from="Soma/so2D" to="Soma" method="_on_so2D_input_event"]
 [connection signal="input_event" from="RealGreekFire/gf2D" to="RealGreekFire" method="_on_gf2D_input_event"]
+[connection signal="timeout" from="SystemsNode/State Machine/Timer" to="SystemsNode/State Machine" method="_on_Timer_timeout"]

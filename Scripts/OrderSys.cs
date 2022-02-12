@@ -11,11 +11,13 @@ public class OrderSys : Node {
     private DialogueManager speech;
     private MixingBehaviour mix;
     private Drink correctDrink;
+    private DrinkData inst;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready() {
+        inst = GetParent().GetNode<DrinkData>("DrinkData");
         speech = GetParent<Node2D>().GetNode<InterfaceManager>("InterfaceManager").GetNode<DialogueManager>("DialogueManager");
-        mix = new MixingBehaviour();
+        mix = GetParent().GetNode<MixingBehaviour>("Mixing");
         correctDrink = null;
 
         GD.Print("Ran OrderSys");
@@ -31,7 +33,6 @@ public class OrderSys : Node {
         //whenever this is called generate a new random object so the seed is updated
         Random rand = new Random();
         string ordType;
-        DrinkData inst = DrinkData.Instance;
 
         //randomly decide which order type is going to be processed
         int type = rand.Next(0, 2);
@@ -52,8 +53,13 @@ public class OrderSys : Node {
         }
 
         //get a random drink & update the class's correct drink
-        Drink randDr = inst.returnDrinkAt(rand.Next(0, inst.DrinkSize() - 1));
+        int index = rand.Next(0, inst.DrinkSize() - 1);
+        GD.Print("Random Index for Order System: " + index);
+        GD.Print("DrinkList Size: " + inst.DrinkSize());
+        Drink randDr = inst.returnDrinkAt(index);
         correctDrink = randDr;
+
+        randDr.printDrinkToConsole();
 
         //communicate the correct drink and the type to the speech system
         speech.ShowDialogueElement(randDr, ordType);
