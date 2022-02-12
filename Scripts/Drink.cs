@@ -14,16 +14,16 @@ public class Drink {
 
 	//constructor to be used when creating a new drink and recipe.
 	public Drink(string nKeyword, Ingredient nIng1, Ingredient nIng2) {
-		keyword = nKeyword;
-		ing1 = nIng1;
-		ing2 = nIng2;
+		this.keyword = nKeyword;
+		this.ing1 = nIng1;
+		this.ing2 = nIng2;
     }
 
 	//default constructor. Should never be used to avoid blank recipes and errors
 	private Drink() {
-		ing1 = null;
-		ing2 = null;
-		keyword = "";
+		//ing1 = null;
+		//ing2 = null;
+		//keyword = "";
 	}
 
 	//getters
