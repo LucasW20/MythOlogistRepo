@@ -9,12 +9,17 @@ var main_point
 var main_nodes = []
 var rest_point
 var rest_nodes = []
+var mix_point
+var mix_nodes = []
+var Fname
 
 func _ready():
 	rest_nodes = get_tree().get_nodes_in_group("sozone")
 	main_nodes = get_tree().get_nodes_in_group("somain")
+	mix_nodes = get_tree().get_nodes_in_group("mixspot")
 	main_point = main_nodes[0].global_position
 	rest_point = rest_nodes[0].global_position
+	mix_point = mix_nodes[0].global_position
 	rest_nodes[0].select()
 
 func _physics_process(delta):
@@ -45,6 +50,14 @@ func _input(event):
 					soma.set_texture(somajuice)
 					if main_point == rest_point:
 						soma.set_texture(normalsoma)
-		
+					if rest_point == mix_point:
+						Globaldrink.getter = Fname
+						if Globaldrink.switch == 0:
+							Globaldrink.drink1 = Fname
+							Globaldrink.switch = 2
+						if Globaldrink.switch == 1:
+							Globaldrink.drink2 = Fname
+							Globaldrink.switch = 3
+						
 
 

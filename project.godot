@@ -16,7 +16,8 @@ config/icon="res://Images/icon.png"
 
 [autoload]
 
-Mixer="*res://mixer.gd"
+Mixer="res://mixer.gd"
+Globaldrink="*res://BarRoomScreen/globaldrink.gd"
 
 [input]
 

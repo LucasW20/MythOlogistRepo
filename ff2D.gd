@@ -12,6 +12,7 @@ var main_nodes = []
 var mix_point
 var mix_nodes = []
 
+
 func _ready():
 	rest_nodes = get_tree().get_nodes_in_group("zoneff")
 	main_nodes = get_tree().get_nodes_in_group("ffmain")
@@ -20,6 +21,7 @@ func _ready():
 	rest_point = rest_nodes[0].global_position
 	mix_point = mix_nodes[0].global_position
 	rest_nodes[0].select()
+	
 
 func _physics_process(delta):
 	
@@ -31,7 +33,10 @@ func _physics_process(delta):
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("grab"):
-		
+		if Globaldrink.switch == 2:
+			Globaldrink.switch = 1
+		if Globaldrink.switch == 3:
+			Globaldrink.switch = 0
 		Fname = name
 		print(Fname)
 		selected = true
@@ -52,7 +57,14 @@ func _input(event):
 					fruit.set_texture(fruitjuice)
 					if rest_point == main_point:
 						fruit.set_texture(normalfruit)
-					
+					if rest_point == mix_point:
+						Globaldrink.getter = Fname
+						if Globaldrink.switch == 0:
+							Globaldrink.drink1 = Fname
+							Globaldrink.switch = 2
+						if Globaldrink.switch == 1:
+							Globaldrink.drink2 = Fname
+							Globaldrink.switch = 3
 						
 		
 
