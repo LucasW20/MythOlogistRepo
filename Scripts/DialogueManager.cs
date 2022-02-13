@@ -35,85 +35,85 @@ public class DialogueManager : Control
 //      
 //  }
 
-    // TEST CASE
-    // Shows popup with ingredients as parameters
-    public void ShowDialogueElement(String ingredient_01, String ingredient_02, String drink, String orderType) {
-        // make popup visible
-        GetNode<Popup>("Popup").Popup_();
+	// TEST CASE
+	// Shows popup with ingredients as parameters
+	public void ShowDialogueElement(String ingredient_01, String ingredient_02, String drink, String orderType) {
+		// make popup visible
+		GetNode<Popup>("Popup").Popup_();
 
-        // check order type for how to display drinks
-        switch(orderType)
-        {
-            case ("ingredient"): // shows both ingredients
-                // change both ingredient sprites to match ingredients
-                GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/Ingredients/"+ingredient_01) as Texture;
-                GetNode<Sprite>("Popup/Ingredient02").Texture = ResourceLoader.Load("res://Images/Ingredients/"+ingredient_02) as Texture;
+		// check order type for how to display drinks
+		switch(orderType)
+		{
+			case ("ingredient"): // shows both ingredients
+				// change both ingredient sprites to match ingredients
+				GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/Ingredients/"+ingredient_01) as Texture;
+				GetNode<Sprite>("Popup/Ingredient02").Texture = ResourceLoader.Load("res://Images/Ingredients/"+ingredient_02) as Texture;
 
-                // make ingredient sprites and label visible
-                GetNode<Sprite>("Popup/Ingredient01").Visible = true;
-                GetNode<Sprite>("Popup/Ingredient02").Visible = true;
-                GetNode<Label>("Popup/PlusSign").Visible = true;
+				// make ingredient sprites and label visible
+				GetNode<Sprite>("Popup/Ingredient01").Visible = true;
+				GetNode<Sprite>("Popup/Ingredient02").Visible = true;
+				GetNode<Label>("Popup/PlusSign").Visible = true;
 
-                break;
-            case ("vague"): // shows one ingredient and a question mark
-                // change first ingredient sprite to match ingredient
-                // TODO - select shown ingredient at random
-                GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/Ingredients/"+ingredient_01) as Texture;
+				break;
+			case ("vague"): // shows one ingredient and a question mark
+				// change first ingredient sprite to match ingredient
+				// TODO - select shown ingredient at random
+				GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/Ingredients/"+ingredient_01) as Texture;
 
-                // make first ingredient sprite and label visible
-                GetNode<Sprite>("Popup/Ingredient01").Visible = true;
-                GetNode<Label>("Popup/PlusSign").Visible = true;
+				// make first ingredient sprite and label visible
+				GetNode<Sprite>("Popup/Ingredient01").Visible = true;
+				GetNode<Label>("Popup/PlusSign").Visible = true;
 
-                break;
-            case ("drink"): // shows completed drink
-                // change drink sprite to match drink
-                GetNode<Sprite>("Popup/Drink").Texture = ResourceLoader.Load("res://Images/Drinks/"+drink) as Texture;
+				break;
+			case ("drink"): // shows completed drink
+				// change drink sprite to match drink
+				GetNode<Sprite>("Popup/Drink").Texture = ResourceLoader.Load("res://Images/Drinks/"+drink) as Texture;
 
-                // make drink sprite visible
-                GetNode<Sprite>("Popup/Drink").Visible = true;
+				// make drink sprite visible
+				GetNode<Sprite>("Popup/Drink").Visible = true;
 
-                break;
-        }
-    }
+				break;
+		}
+	}
 
-    // shows popup with drink as parameter
-    public void ShowDialogueElement(Drink drink, String orderType) {
-        // make popup visible
-        GetNode<Popup>("Popup").Popup_();
+	// shows popup with drink as parameter
+	public void ShowDialogueElement(Drink drink, String orderType) {
+		// make popup visible
+		GetNode<Popup>("Popup").Popup_();
 
-        // check order type for how to display drinks
-        switch(orderType)
-        {
-            case ("ingredient"): // shows both ingredients
-                // change both ingredient sprites to match ingredients
-                GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/Ingredients/"+drink.getFirstIng().getKeyword()) as Texture;
-                GetNode<Sprite>("Popup/Ingredient02").Texture = ResourceLoader.Load("res://Images/Ingredients/"+drink.getSecondIng().getKeyword()) as Texture;
+		// check order type for how to display drinks
+		switch(orderType)
+		{
+			case ("ingredient"): // shows both ingredients
+				// change both ingredient sprites to match ingredients
+				GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/Ingredients/"+drink.getFirstIng().getKeyword()) as Texture;
+				GetNode<Sprite>("Popup/Ingredient02").Texture = ResourceLoader.Load("res://Images/Ingredients/"+drink.getSecondIng().getKeyword()) as Texture;
 
-                // make ingredient sprites and label visible
-                GetNode<Sprite>("Popup/Ingredient01").Visible = true;
-                GetNode<Sprite>("Popup/Ingredient02").Visible = true;
-                GetNode<Label>("Popup/PlusSign").Visible = true;
+				// make ingredient sprites and label visible
+				GetNode<Sprite>("Popup/Ingredient01").Visible = true;
+				GetNode<Sprite>("Popup/Ingredient02").Visible = true;
+				GetNode<Label>("Popup/PlusSign").Visible = true;
 
-                break;
-            case ("vague"): // shows one ingredient and a question mark
-                // change first ingredient sprite to match ingredient
+				break;
+			case ("vague"): // shows one ingredient and a question mark
+				// change first ingredient sprite to match ingredient
 
-                // TODO - select shown ingredient at random
-                GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/Ingredients/"+drink.getFirstIng()) as Texture;
+				// TODO - select shown ingredient at random
+				GetNode<Sprite>("Popup/Ingredient01").Texture = ResourceLoader.Load("res://Images/Ingredients/"+drink.getFirstIng().getKeyword()) as Texture;
 
-                // make first ingredient sprite and label visible
-                GetNode<Sprite>("Popup/Ingredient01").Visible = true;
-                GetNode<Label>("Popup/PlusSign").Visible = true;
+				// make first ingredient sprite and label visible
+				GetNode<Sprite>("Popup/Ingredient01").Visible = true;
+				GetNode<Label>("Popup/PlusSign").Visible = true;
 
-                break;
-            case ("drink"): // shows completed drink
-                // change drink sprite to match drink
-                GetNode<Sprite>("Popup/Drink").Texture = ResourceLoader.Load("res://Images/Drinks/"+drink.getDrinkKeyword()) as Texture;
+				break;
+			case ("drink"): // shows completed drink
+				// change drink sprite to match drink
+				GetNode<Sprite>("Popup/Drink").Texture = ResourceLoader.Load("res://Images/Drinks/"+drink.getDrinkKeyword()) as Texture;
 
-                // make drink sprite visible
-                GetNode<Sprite>("Popup/Drink").Visible = true;
+				// make drink sprite visible
+				GetNode<Sprite>("Popup/Drink").Visible = true;
 
-                break;
-        }
-    }
+				break;
+		}
+	}
 }

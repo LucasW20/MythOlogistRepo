@@ -1,0 +1,319 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://ff2D.gd" type="Script" id=1]
+[ext_resource path="res://Images/Ingredients/in_08_forbiddenFruit.png" type="Texture" id=2]
+[ext_resource path="res://Images/Ingredients/in_03_newtEye.png" type="Texture" id=3]
+[ext_resource path="res://Images/Ingredients/in_04_orochiPoison.png" type="Texture" id=4]
+[ext_resource path="res://Images/Ingredients/in_06_bloodOfHeyZeus.png" type="Texture" id=5]
+[ext_resource path="res://Images/Ingredients/in_02_unicornHorn.png" type="Texture" id=6]
+[ext_resource path="res://Images/Ingredients/in_07_soma.png" type="Texture" id=7]
+[ext_resource path="res://Images/Ingredients/in_01_realGreekFire.png" type="Texture" id=8]
+[ext_resource path="res://Images/Ingredients/in_05_styxSluge.png" type="Texture" id=9]
+[ext_resource path="res://bohzzone.gd" type="Script" id=10]
+[ext_resource path="res://Images/Backround/background.png" type="Texture" id=11]
+[ext_resource path="res://Images/Backround/UI.png" type="Texture" id=12]
+[ext_resource path="res://bohzdrop.gd" type="Script" id=13]
+[ext_resource path="res://BarRoomScreen/dropzone.tscn" type="PackedScene" id=14]
+[ext_resource path="res://UnicornHorn.gd" type="Script" id=15]
+[ext_resource path="res://ghzone.gd" type="Script" id=16]
+[ext_resource path="res://StyxsSluge.gd" type="Script" id=17]
+[ext_resource path="res://sszone.gd" type="Script" id=18]
+[ext_resource path="res://OrochiPoison.gd" type="Script" id=19]
+[ext_resource path="res://RealGreekFire.gd" type="Script" id=20]
+[ext_resource path="res://Soma.gd" type="Script" id=21]
+[ext_resource path="res://NewtEye.gd" type="Script" id=22]
+[ext_resource path="res://nezone.gd" type="Script" id=23]
+[ext_resource path="res://opzone.gd" type="Script" id=24]
+[ext_resource path="res://gfzone.gd" type="Script" id=25]
+[ext_resource path="res://sozone.gd" type="Script" id=26]
+[ext_resource path="res://mixer.gd" type="Script" id=27]
+[ext_resource path="res://Scripts/DialogueManager.cs" type="Script" id=28]
+[ext_resource path="res://Scripts/DrinkData.cs" type="Script" id=29]
+[ext_resource path="res://Scripts/InterfaceManager.cs" type="Script" id=30]
+[ext_resource path="res://Scripts/MixingBehaviour.cs" type="Script" id=31]
+[ext_resource path="res://Scripts/OrderSys.cs" type="Script" id=32]
+[ext_resource path="res://Images/speech_bubble.png" type="Texture" id=33]
+[ext_resource path="res://Images/Drinks/dr_02_deadinside.png" type="Texture" id=34]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 90.0
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 100.0
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 60.0
+
+[node name="working dragndrop" type="Node2D"]
+script = ExtResource( 27 )
+
+[node name="ForbidenFruit" type="Sprite" parent="."]
+position = Vector2( 960, 170 )
+scale = Vector2( 0.540187, 0.781751 )
+z_index = 1
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="ff_2D" type="Area2D" parent="ForbidenFruit"]
+
+[node name="ff_cs2D" type="CollisionShape2D" parent="ForbidenFruit/ff_2D"]
+position = Vector2( 0, 30 )
+scale = Vector2( 1, 0.75 )
+shape = SubResource( 1 )
+
+[node name="work_on_later" type="Node2D" parent="."]
+
+[node name="BloodOfHeyZeus" type="Sprite" parent="work_on_later"]
+position = Vector2( 845, 197 )
+scale = Vector2( 0.5, 0.51 )
+z_index = 1
+texture = ExtResource( 5 )
+script = ExtResource( 13 )
+
+[node name="bohz_2D" type="Area2D" parent="work_on_later/BloodOfHeyZeus"]
+
+[node name="bohz_cs2D" type="CollisionShape2D" parent="work_on_later/BloodOfHeyZeus/bohz_2D"]
+shape = SubResource( 2 )
+
+[node name="UnicornHorn" type="Sprite" parent="work_on_later"]
+position = Vector2( 960, 520 )
+scale = Vector2( 0.470833, 0.577845 )
+z_index = 1
+texture = ExtResource( 6 )
+script = ExtResource( 15 )
+
+[node name="uh2D" type="Area2D" parent="work_on_later/UnicornHorn"]
+
+[node name="csuh2D" type="CollisionShape2D" parent="work_on_later/UnicornHorn/uh2D"]
+shape = SubResource( 3 )
+
+[node name="StyxsSluge" type="Sprite" parent="work_on_later"]
+position = Vector2( 847, 520 )
+scale = Vector2( 0.45, 0.54 )
+z_index = 1
+texture = ExtResource( 9 )
+script = ExtResource( 17 )
+
+[node name="ss2D" type="Area2D" parent="work_on_later/StyxsSluge"]
+
+[node name="csss2D" type="CollisionShape2D" parent="work_on_later/StyxsSluge/ss2D"]
+shape = SubResource( 4 )
+
+[node name="OrochiPoison" type="Sprite" parent="work_on_later"]
+position = Vector2( 960, 410 )
+scale = Vector2( 0.38, 0.572417 )
+z_index = 1
+texture = ExtResource( 4 )
+script = ExtResource( 19 )
+
+[node name="op2D" type="Area2D" parent="work_on_later/OrochiPoison"]
+
+[node name="opcs2D" type="CollisionShape2D" parent="work_on_later/OrochiPoison/op2D"]
+shape = SubResource( 5 )
+
+[node name="NewtEye" type="Sprite" parent="work_on_later"]
+position = Vector2( 845, 415 )
+scale = Vector2( 0.38, 0.572417 )
+z_index = 1
+texture = ExtResource( 3 )
+script = ExtResource( 22 )
+
+[node name="ne2D" type="Area2D" parent="work_on_later/NewtEye"]
+
+[node name="csne2D" type="CollisionShape2D" parent="work_on_later/NewtEye/ne2D"]
+shape = SubResource( 6 )
+
+[node name="RealGreekFire" type="Sprite" parent="work_on_later"]
+position = Vector2( 845, 303 )
+scale = Vector2( 0.323335, 0.487059 )
+z_index = 1
+texture = ExtResource( 8 )
+script = ExtResource( 20 )
+
+[node name="gf2D" type="Area2D" parent="work_on_later/RealGreekFire"]
+
+[node name="csgf2D" type="CollisionShape2D" parent="work_on_later/RealGreekFire/gf2D"]
+shape = SubResource( 7 )
+
+[node name="Soma" type="Sprite" parent="work_on_later"]
+position = Vector2( 960, 285 )
+scale = Vector2( 0.501667, 0.755691 )
+z_index = 1
+texture = ExtResource( 7 )
+script = ExtResource( 21 )
+
+[node name="so2D" type="Area2D" parent="work_on_later/Soma"]
+
+[node name="csso2D" type="CollisionShape2D" parent="work_on_later/Soma/so2D"]
+position = Vector2( 0, 20 )
+shape = SubResource( 8 )
+
+[node name="Node2D" type="Node2D" parent="work_on_later"]
+
+[node name="backround" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackroundTest" type="Sprite" parent="backround"]
+position = Vector2( 514, 299 )
+scale = Vector2( 0.533, 0.555 )
+z_index = -1
+texture = ExtResource( 11 )
+
+[node name="Ui" type="Sprite" parent="backround/BackroundTest"]
+position = Vector2( 7.50464, 1.80182 )
+texture = ExtResource( 12 )
+
+[node name="ffzone" parent="." groups=["ffmain", "zoneff"] instance=ExtResource( 14 )]
+visible = false
+position = Vector2( 960, 170 )
+
+[node name="bohzzone" type="Position2D" parent="." groups=["bohzmain", "bohzzone"]]
+visible = false
+position = Vector2( 845, 195 )
+script = ExtResource( 10 )
+
+[node name="ghzone" type="Position2D" parent="." groups=["ghmain", "ghzone"]]
+visible = false
+position = Vector2( 960, 520 )
+script = ExtResource( 16 )
+
+[node name="sszone" type="Position2D" parent="." groups=["ssmain", "sszone"]]
+visible = false
+position = Vector2( 845, 520 )
+script = ExtResource( 18 )
+
+[node name="nezone" type="Position2D" parent="." groups=["nemain", "nezone"]]
+visible = false
+position = Vector2( 845, 415 )
+script = ExtResource( 23 )
+
+[node name="opzone" type="Position2D" parent="." groups=["opmain", "opzone"]]
+visible = false
+position = Vector2( 960, 410 )
+script = ExtResource( 24 )
+
+[node name="sozone" type="Position2D" parent="." groups=["somain", "sozone"]]
+visible = false
+position = Vector2( 960, 280 )
+script = ExtResource( 26 )
+
+[node name="gfzone" type="Position2D" parent="." groups=["gfmain", "gfzone"]]
+visible = false
+position = Vector2( 845, 300 )
+script = ExtResource( 25 )
+
+[node name="drinksmix" parent="." groups=["bohzzone", "gfzone", "ghzone", "mixspot", "nezone", "opzone", "sozone", "sszone", "zoneff"] instance=ExtResource( 14 )]
+visible = false
+position = Vector2( 340, 481 )
+
+[node name="SystemsNode" type="Node2D" parent="."]
+
+[node name="InterfaceManager" type="CanvasLayer" parent="SystemsNode"]
+script = ExtResource( 30 )
+
+[node name="DialogueManager" type="Control" parent="SystemsNode/InterfaceManager"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup" type="Popup" parent="SystemsNode/InterfaceManager/DialogueManager"]
+anchor_left = 0.386
+anchor_top = 0.188
+anchor_right = 0.634
+anchor_bottom = 0.5
+margin_left = -0.264008
+margin_top = 0.199997
+margin_right = -0.216003
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeechBubble" type="Sprite" parent="SystemsNode/InterfaceManager/DialogueManager/Popup"]
+position = Vector2( 136, 114 )
+scale = Vector2( 0.365625, 0.29062 )
+texture = ExtResource( 33 )
+
+[node name="Ingredient01" type="Sprite" parent="SystemsNode/InterfaceManager/DialogueManager/Popup"]
+visible = false
+position = Vector2( 67, 83 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Ingredient02" type="Sprite" parent="SystemsNode/InterfaceManager/DialogueManager/Popup"]
+visible = false
+position = Vector2( 190, 83 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="PlusSign" type="Label" parent="SystemsNode/InterfaceManager/DialogueManager/Popup"]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 112.0
+margin_top = 58.0
+margin_right = 122.0
+margin_bottom = 72.0
+rect_scale = Vector2( 4, 4 )
+text = "+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drink" type="Sprite" parent="SystemsNode/InterfaceManager/DialogueManager/Popup"]
+visible = false
+position = Vector2( 131, 87 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 34 )
+
+[node name="DrinkData" type="Node2D" parent="SystemsNode"]
+script = ExtResource( 29 )
+
+[node name="Order Sytem" type="Control" parent="SystemsNode"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mixing" type="Control" parent="SystemsNode"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="input_event" from="ForbidenFruit/ff_2D" to="ForbidenFruit" method="_on_ff_2D_input_event"]
+[connection signal="input_event" from="work_on_later/BloodOfHeyZeus/bohz_2D" to="work_on_later/BloodOfHeyZeus" method="_on_bohz_2D_input_event"]
+[connection signal="input_event" from="work_on_later/UnicornHorn/uh2D" to="work_on_later/UnicornHorn" method="_on_uh2D_input_event"]
+[connection signal="input_event" from="work_on_later/StyxsSluge/ss2D" to="work_on_later/StyxsSluge" method="_on_ss2D_input_event"]
+[connection signal="input_event" from="work_on_later/OrochiPoison/op2D" to="work_on_later/OrochiPoison" method="_on_op2D_input_event"]
+[connection signal="input_event" from="work_on_later/NewtEye/ne2D" to="work_on_later/NewtEye" method="_on_ne2D_input_event"]
+[connection signal="input_event" from="work_on_later/RealGreekFire/gf2D" to="work_on_later/RealGreekFire" method="_on_gf2D_input_event"]
+[connection signal="input_event" from="work_on_later/Soma/so2D" to="work_on_later/Soma" method="_on_so2D_input_event"]

@@ -7,10 +7,9 @@ using System.Linq;
  * Singleton class that holds a list for Ingredients and Drinks.
  * @author Benjamin_J_Bucheger
  * @start 1-31-2022
- * @version 2-2-2022
+ * @version 2-12-2022
  */
-public class DrinkData : Node
-{
+public class DrinkData : Node {
     // Singleton setup
     private static readonly DrinkData _instance = new DrinkData();
 
@@ -67,25 +66,24 @@ public class DrinkData : Node
 
 
     // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
-    {
+    public override void _Ready() {
         // add all drink and ingredients to list
 
         // Adds ingredients to _ingredientList from IngredientsList text file
         var path = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "TextFiles\\IngredientsList.txt"); // open new path to file
         List<string> text = System.IO.File.ReadLines(path).ToList(); // read file into temporary List
-        
+
         // Read through List and use string to make new Ingredient objects
         // and load objects into _ingredientList
         foreach (string txt in text) {
-            Ingredient tempIng = new Ingredient(txt+".png");
+            Ingredient tempIng = new Ingredient(txt + ".png");
             _ingredientList.Add(tempIng);
         }
 
         // Adds Drinks to _drinkList from DrinkList text file
         path = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "TextFiles\\DrinksList.txt"); // change path
         text = System.IO.File.ReadLines(path).ToList();
-        
+
         // Read through List and use string to make new Drink objects
         // and load objects into _drinkList
         string[] temp;
@@ -93,11 +91,11 @@ public class DrinkData : Node
             temp = txt.Split(','); // split text list elements into an array
 
             // If both ingredients are found in the ingredients list, create a new drink using those ingredients
-            if (returnIngredient(temp[1]+".png") && returnIngredient(temp[2]+".png")) {
-                Ingredient tempIng1 = new Ingredient(temp[1]+".png");
-                Ingredient tempIng2 = new Ingredient(temp[2]+".png");
-                
-                Drink tempDrink = new Drink((temp[0]+".png"), tempIng1, tempIng2);
+            if (returnIngredient(temp[1] + ".png") && returnIngredient(temp[2] + ".png")) {
+                Ingredient tempIng1 = new Ingredient(temp[1] + ".png");
+                Ingredient tempIng2 = new Ingredient(temp[2] + ".png");
+
+                Drink tempDrink = new Drink((temp[0] + ".png"), tempIng1, tempIng2);
 
                 GD.Print(tempDrink.getFirstIng().getKeyword());
                 _drinkList.Add(tempDrink);

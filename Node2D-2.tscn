@@ -5,7 +5,7 @@
 [ext_resource path="res://Scripts/DialogueManager.cs" type="Script" id=3]
 [ext_resource path="res://Scripts/InterfaceManager.cs" type="Script" id=4]
 [ext_resource path="res://Scripts/DrinkData.cs" type="Script" id=5]
-[ext_resource path="res://OrderSys.cs" type="Script" id=6]
+[ext_resource path="res://Scripts/OrderSys.cs" type="Script" id=6]
 [ext_resource path="res://Scripts/MixingBehaviour.cs" type="Script" id=7]
 
 [node name="SystemsNode" type="Node2D"]
