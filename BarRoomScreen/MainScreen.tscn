@@ -94,7 +94,9 @@ z_index = 1
 texture = ExtResource( 10 )
 script = ExtResource( 28 )
 
+
 [node name="uh2D" type="Area2D" parent="UnicornHorn"]
+
 
 [node name="csuh2D" type="CollisionShape2D" parent="UnicornHorn/uh2D"]
 shape = SubResource( 3 )
@@ -108,6 +110,7 @@ script = ExtResource( 32 )
 
 [node name="ss2D" type="Area2D" parent="StyxsSluge"]
 
+
 [node name="csss2D" type="CollisionShape2D" parent="StyxsSluge/ss2D"]
 shape = SubResource( 4 )
 
@@ -118,7 +121,9 @@ z_index = 1
 texture = ExtResource( 7 )
 script = ExtResource( 33 )
 
+
 [node name="op2D" type="Area2D" parent="OrochiPoison"]
+
 
 [node name="csop2D" type="CollisionShape2D" parent="OrochiPoison/op2D"]
 shape = SubResource( 5 )
@@ -130,7 +135,9 @@ z_index = 1
 texture = ExtResource( 5 )
 script = ExtResource( 30 )
 
+
 [node name="ne2D" type="Area2D" parent="NewtEye"]
+
 
 [node name="csne2D" type="CollisionShape2D" parent="NewtEye/ne2D"]
 shape = SubResource( 6 )
@@ -142,7 +149,9 @@ z_index = 1
 texture = ExtResource( 9 )
 script = ExtResource( 31 )
 
+
 [node name="so2D" type="Area2D" parent="Soma"]
+
 
 [node name="csso2D" type="CollisionShape2D" parent="Soma/so2D"]
 shape = SubResource( 7 )
