@@ -181,6 +181,7 @@ anchor_bottom = 0.5
 margin_left = -0.264008
 margin_top = 0.199997
 margin_right = -0.216003
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -230,6 +231,7 @@ script = ExtResource( 18 )
 [node name="Order System" type="Control" parent="SystemsNode"]
 margin_right = 40.0
 margin_bottom = 40.0
+mouse_filter = 2
 script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -238,6 +240,7 @@ __meta__ = {
 [node name="Mixing" type="Control" parent="SystemsNode"]
 margin_right = 40.0
 margin_bottom = 40.0
+mouse_filter = 2
 script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -246,6 +249,7 @@ __meta__ = {
 [node name="State Machine" type="Control" parent="SystemsNode"]
 margin_right = 40.0
 margin_bottom = 40.0
+mouse_filter = 2
 script = ExtResource( 34 )
 __meta__ = {
 "_edit_use_anchors_": false
