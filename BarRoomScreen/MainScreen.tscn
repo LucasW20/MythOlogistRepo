@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Images/Ingredients/in_05_styxSluge.png" type="Texture" id=1]
 [ext_resource path="res://Images/Backround/UI.png" type="Texture" id=2]
@@ -35,6 +35,11 @@
 [ext_resource path="res://OrochiPoison.gd" type="Script" id=33]
 [ext_resource path="res://Scripts/StateMachineRuntime.cs" type="Script" id=34]
 [ext_resource path="res://BarRoomScreen/globaldrink.gd" type="Script" id=35]
+[ext_resource path="res://Images/glassV01.png" type="Texture" id=36]
+[ext_resource path="res://Images/Drinks/dr_15_zeusJuice.png" type="Texture" id=37]
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 80.0
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 80.0
@@ -57,11 +62,20 @@ radius = 80.0
 [sub_resource type="CircleShape2D" id=7]
 radius = 80.0
 
-[sub_resource type="CircleShape2D" id=8]
-radius = 80.0
-
 [node name="MainScreen" type="Node2D"]
 script = ExtResource( 35 )
+
+[node name="RealGreekFire" type="Sprite" parent="."]
+position = Vector2( 840, 413 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 8 )
+script = ExtResource( 29 )
+
+[node name="gf2D" type="Area2D" parent="RealGreekFire"]
+
+[node name=",csgf2D" type="CollisionShape2D" parent="RealGreekFire/gf2D"]
+shape = SubResource( 8 )
 
 [node name="ForbidenFruit" type="Sprite" parent="."]
 position = Vector2( 955, 195 )
@@ -146,18 +160,6 @@ script = ExtResource( 31 )
 
 [node name="csso2D" type="CollisionShape2D" parent="Soma/so2D"]
 shape = SubResource( 7 )
-
-[node name="RealGreekFire" type="Sprite" parent="."]
-position = Vector2( 840, 413 )
-scale = Vector2( 0.5, 0.5 )
-z_index = 1
-texture = ExtResource( 8 )
-script = ExtResource( 29 )
-
-[node name="gf2D" type="Area2D" parent="RealGreekFire"]
-
-[node name=",csgf2D" type="CollisionShape2D" parent="RealGreekFire/gf2D"]
-shape = SubResource( 8 )
 
 [node name="SystemsNode" type="Node2D" parent="."]
 
@@ -324,6 +326,17 @@ script = ExtResource( 20 )
 visible = false
 position = Vector2( 340, 481 )
 
+[node name="glass" type="Sprite" parent="."]
+position = Vector2( 342, 450 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 36 )
+
+[node name="ingrident" type="Sprite" parent="."]
+position = Vector2( 342, 450 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 37 )
+
+[connection signal="input_event" from="RealGreekFire/gf2D" to="RealGreekFire" method="_on_gf2D_input_event"]
 [connection signal="input_event" from="ForbidenFruit/Area2D" to="ForbidenFruit" method="_on_Area2D_input_event"]
 [connection signal="input_event" from="BloodOfHeyZeus/bohz_2D" to="BloodOfHeyZeus" method="_on_bohz_2D_input_event"]
 [connection signal="input_event" from="UnicornHorn/uh2D" to="UnicornHorn" method="_on_uh2D_input_event"]
@@ -331,5 +344,4 @@ position = Vector2( 340, 481 )
 [connection signal="input_event" from="OrochiPoison/op2D" to="OrochiPoison" method="_on_op2D_input_event"]
 [connection signal="input_event" from="NewtEye/ne2D" to="NewtEye" method="_on_ne2D_input_event"]
 [connection signal="input_event" from="Soma/so2D" to="Soma" method="_on_so2D_input_event"]
-[connection signal="input_event" from="RealGreekFire/gf2D" to="RealGreekFire" method="_on_gf2D_input_event"]
 [connection signal="timeout" from="SystemsNode/State Machine/Timer" to="SystemsNode/State Machine" method="_on_Timer_timeout"]

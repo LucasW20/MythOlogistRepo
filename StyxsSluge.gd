@@ -7,6 +7,7 @@ onready var sludge = get_node(".")
 var selected = false
 var main_point
 var rest_point
+var go_back
 var rest_nodes = []
 var main_nodes = []
 var mix_point
@@ -20,6 +21,7 @@ func _ready():
 	main_point = main_nodes[0].global_position
 	rest_point = rest_nodes[0].global_position
 	mix_point = mix_nodes[0].global_position
+	go_back = rest_nodes[0].global_position
 	rest_nodes[0].select()
 
 
@@ -34,8 +36,11 @@ func _physics_process(delta):
 
 func _on_ss2D_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_just_pressed("grab"):
-		print(name)
-		print("working")
+		Fname = "in_05_styxSludge"
+		if Globaldrink.switch == 2:
+			Globaldrink.switch = 1
+		if Globaldrink.switch == 3:
+			Globaldrink.switch = 0
 		selected = true
 
 
@@ -50,15 +55,17 @@ func _input(event):
 					child.select()
 					rest_point = child.global_position
 					shortest_dist = distance
-					sludge.set_texture(sludgejuice)
+					
 					if rest_point == main_point:
 						sludge.set_texture(normalsludge)
 					if rest_point == mix_point:
 						Globaldrink.getter = Fname
 						if Globaldrink.switch == 0:
 							Globaldrink.drink1 = Fname
+							print(Fname)
 							Globaldrink.switch = 2
 						if Globaldrink.switch == 1:
 							Globaldrink.drink2 = Fname
+							print(Fname)
 							Globaldrink.switch = 3
-						
+						rest_point = go_back

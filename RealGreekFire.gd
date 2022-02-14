@@ -7,6 +7,7 @@ var normalfire = preload("res://Images/Ingredients/in_01_realGreekFire.png")
 onready var fire = get_node(".")
 var selected = false
 var main_point
+var go_back
 var main_nodes = []
 var rest_point
 var rest_nodes = []
@@ -21,6 +22,7 @@ func _ready():
 	main_point = main_nodes[0].global_position
 	rest_point = rest_nodes[0].global_position
 	mix_point = mix_nodes[0].global_position
+	go_back = rest_nodes[0].global_position
 	rest_nodes[0].select()
 
 func _physics_process(delta):
@@ -33,8 +35,11 @@ func _physics_process(delta):
 
 func _on_gf2D_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("grab"):
-		print(name)
-		print("working")
+		Fname = "in_01_realGreekFire"
+		if Globaldrink.switch == 2:
+			Globaldrink.switch = 1
+		if Globaldrink.switch == 3:
+			Globaldrink.switch = 0
 		selected = true
 
 func _input(event):
@@ -48,7 +53,7 @@ func _input(event):
 					child.select()
 					rest_point = child.global_position
 					shortest_dist = distance
-					fire.set_texture(firejuice)
+					
 					if main_point == rest_point:
 						fire.set_texture(normalfire)
 						
@@ -56,10 +61,14 @@ func _input(event):
 						Globaldrink.getter = Fname
 						if Globaldrink.switch == 0:
 							Globaldrink.drink1 = Fname
+							print(Fname)
+							
 							Globaldrink.switch = 2
 						if Globaldrink.switch == 1:
 							Globaldrink.drink2 = Fname
+							print(Fname)
+							
 							Globaldrink.switch = 3
-						
+						rest_point = go_back
 
 
