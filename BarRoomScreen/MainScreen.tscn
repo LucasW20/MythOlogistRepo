@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Images/Ingredients/in_05_styxSluge.png" type="Texture" id=1]
 [ext_resource path="res://Images/Backround/UI.png" type="Texture" id=2]
@@ -36,6 +36,10 @@
 [ext_resource path="res://Scripts/StateMachineRuntime.cs" type="Script" id=34]
 [ext_resource path="res://BarRoomScreen/globaldrink.gd" type="Script" id=35]
 [ext_resource path="res://Music/im-living-8636.mp3" type="AudioStream" id=36]
+[ext_resource path="res://Images/glassV01.png" type="Texture" id=37]
+[ext_resource path="res://Images/Buttons/squareButton.png" type="Texture" id=38]
+[ext_resource path="res://Fonts/Acme-Regular.ttf" type="DynamicFontData" id=39]
+[ext_resource path="res://BarRoomScreen/StartScreen.gd" type="Script" id=40]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 80.0
@@ -60,6 +64,12 @@ radius = 80.0
 
 [sub_resource type="CircleShape2D" id=8]
 radius = 80.0
+
+[sub_resource type="DynamicFont" id=9]
+size = 60
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 39 )
 
 [node name="MainScreen" type="Node2D"]
 script = ExtResource( 35 )
@@ -327,8 +337,76 @@ position = Vector2( 839, 418 )
 script = ExtResource( 20 )
 
 [node name="drinksmix" parent="Background" groups=["bohzzone", "gfzone", "ghzone", "mixspot", "nezone", "opzone", "sozone", "sszone", "zoneff"] instance=ExtResource( 11 )]
-visible = false
 position = Vector2( 340, 481 )
+
+[node name="Sprite" type="Sprite" parent="Background/drinksmix"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 37 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = 954.0
+margin_top = -1.0
+margin_right = 994.0
+margin_bottom = 39.0
+script = ExtResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RestartButton" type="Button" parent="Control"]
+anchor_right = 1.75
+anchor_bottom = 1.775
+margin_left = -77.0
+margin_right = -77.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control/RestartButton"]
+position = Vector2( 34, 36 )
+scale = Vector2( 0.741379, 0.741379 )
+texture = ExtResource( 38 )
+
+[node name="Label" type="Label" parent="Control/RestartButton"]
+anchor_right = 0.943
+anchor_bottom = 0.958
+margin_left = 8.0
+margin_top = -5.0
+margin_right = 0.989998
+margin_bottom = 3.98199
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 9 )
+text = "<<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitGame" type="Button" parent="Control"]
+anchor_right = 1.75
+anchor_bottom = 1.775
+margin_right = -7.62939e-06
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control/ExitGame"]
+position = Vector2( 34, 36 )
+scale = Vector2( 0.741379, 0.741379 )
+texture = ExtResource( 38 )
+
+[node name="Label" type="Label" parent="Control/ExitGame"]
+anchor_right = 0.943
+anchor_bottom = 0.958
+margin_left = 19.0
+margin_top = -5.0
+margin_right = -15.01
+margin_bottom = 3.98199
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 9 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="input_event" from="ForbidenFruit/Area2D" to="ForbidenFruit" method="_on_Area2D_input_event"]
 [connection signal="input_event" from="BloodOfHeyZeus/bohz_2D" to="BloodOfHeyZeus" method="_on_bohz_2D_input_event"]
@@ -339,3 +417,5 @@ position = Vector2( 340, 481 )
 [connection signal="input_event" from="Soma/so2D" to="Soma" method="_on_so2D_input_event"]
 [connection signal="input_event" from="RealGreekFire/gf2D" to="RealGreekFire" method="_on_gf2D_input_event"]
 [connection signal="timeout" from="SystemsNode/State Machine/Timer" to="SystemsNode/State Machine" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Control/RestartButton" to="Control" method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="Control/ExitGame" to="Control" method="_on_ExitGame_pressed"]

@@ -40,8 +40,6 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 		Fname = name
 		print(Fname)
 		selected = true
-		
-	
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -65,8 +63,3 @@ func _input(event):
 						if Globaldrink.switch == 1:
 							Globaldrink.drink2 = Fname
 							Globaldrink.switch = 3
-						
-		
-
-
-

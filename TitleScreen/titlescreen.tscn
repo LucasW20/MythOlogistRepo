@@ -6,7 +6,7 @@
 [ext_resource path="res://Images/Buttons/Asset 4@2x.png" type="Texture" id=4]
 [ext_resource path="res://Images/Backround/lookFeel.png" type="Texture" id=5]
 [ext_resource path="res://Images/Buttons/Asset 11@2x.png" type="Texture" id=6]
-[ext_resource path="res://StartScreen.gd" type="Script" id=7]
+[ext_resource path="res://BarRoomScreen/StartScreen.gd" type="Script" id=7]
 [ext_resource path="res://Fonts/CATChilds.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=1]
@@ -60,7 +60,7 @@ position = Vector2( 446.5, 509.625 )
 scale = Vector2( 0.603226, 0.466398 )
 texture = ExtResource( 6 )
 
-[node name="options" parent="CanvasLayer/Control" instance=ExtResource( 3 )]
+[node name="Options" parent="CanvasLayer/Control" instance=ExtResource( 3 )]
 anchor_left = 0.365
 anchor_top = 0.79
 anchor_right = 0.514
@@ -77,7 +77,7 @@ position = Vector2( 645, 510.688 )
 scale = Vector2( 0.63871, 0.469758 )
 texture = ExtResource( 6 )
 
-[node name="exit game" parent="CanvasLayer/Control" instance=ExtResource( 2 )]
+[node name="ExitGame" parent="CanvasLayer/Control" instance=ExtResource( 2 )]
 anchor_left = 0.562
 anchor_top = 0.8
 anchor_right = 0.702
@@ -88,3 +88,4 @@ margin_bottom = 1.20001
 custom_styles/focus = SubResource( 3 )
 
 [connection signal="pressed" from="CanvasLayer/Control/NewGame" to="CanvasLayer/Control" method="_on_NewGame_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ExitGame" to="CanvasLayer/Control" method="_on_ExitGame_pressed"]

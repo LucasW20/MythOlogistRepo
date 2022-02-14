@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/unicorn.png-cc0509454a56634a12ec42e9779bd35f.stex"
+path="res://.import/icon@3x.png-f4996eeb5d0998e0762ae64eae15cc83.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Buttons/unicorn.png"
-dest_files=[ "res://.import/unicorn.png-cc0509454a56634a12ec42e9779bd35f.stex" ]
+source_file="res://Images/icon@3x.png"
+dest_files=[ "res://.import/icon@3x.png-f4996eeb5d0998e0762ae64eae15cc83.stex" ]
 
 [params]
 
