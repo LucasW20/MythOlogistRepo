@@ -15,13 +15,20 @@ public class ParseInput : Node {
         //GD.Print("C#: " + in1);
         //GD.Print("C#: " + in2);
 
-        Ingredient firstIng = GetParent().GetNode<DrinkData>("DrinkData").returnIngredientByKeyword(in1);
-        Ingredient secIng = GetParent().GetNode<DrinkData>("DrinkData").returnIngredientByKeyword(in2);
+        Ingredient firstIng = new Ingredient(GetParent().GetNode<DrinkData>("DrinkData").returnIngredientByKeyword(in1).getKeyword());
+        Ingredient secIng = new Ingredient(GetParent().GetNode<DrinkData>("DrinkData").returnIngredientByKeyword(in2).getKeyword());
 
-        //bool res = GetParent().GetNode<OrderSys>("Order System").verifyOrder(firstIng, secIng);
+        GD.Print(firstIng.getKeyword());
+        GD.Print(secIng.getKeyword());
+        bool res = GetParent().GetNode<OrderSys>("Order System").verifyOrder(firstIng, secIng);
 
-        if (true) {
-            GetParent().GetNode<StateMachineRuntime>("State Machine").NextState();
+
+        if (res) {
+            GD.Print("Correct");
+        } else {
+            GD.Print("False");
         }
+
+        GetParent().GetNode<StateMachineRuntime>("State Machine").NextState();
     }
 }

@@ -35,7 +35,7 @@ public class DrinkData : Node {
 	// Loop through ingredient list and return object with matching keyword
 	public Ingredient returnIngredientByKeyword(string keyWord) {
 		foreach (Ingredient ingredient in _ingredientList) {
-			if (ingredient.getKeyword() == keyWord) {
+			if (ingredient.getKeyword() == keyWord + ".png") {
 				return ingredient;
 			}
 		}
