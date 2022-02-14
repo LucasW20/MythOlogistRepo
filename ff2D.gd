@@ -64,10 +64,10 @@ func _input(event):
 							print(Fname)
 							Globaldrink.switch = 2
 						if Globaldrink.switch == 1:
-							Globaldrink.drink2 = Fname
-							get_parent().get_node("SystemsNode").get_node("ParseIn").call("Parse")
-							print(Fname)
+							Globaldrink.drink2 = "in_08_forbiddenFruit"
+							print(Globaldrink.drink2)
 							Globaldrink.switch = 3
+							get_parent().get_node("SystemsNode").get_node("ParseIn").call("Parse", Globaldrink.drink1, Globaldrink.drink2)
 						rest_point = go_back
 						
 		

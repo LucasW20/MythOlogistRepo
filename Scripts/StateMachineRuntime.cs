@@ -28,7 +28,7 @@ public abstract class StateMachineRuntime : Node {
 		orderSystem = GetParent().GetNode<OrderSys>("Order System");
 
 		//add all of the various states to the list
-		GD.Print("Created new StateMachineRuntime");
+		//GD.Print("Created new StateMachineRuntime");
 		states.Add("Arrive");
 		states.Add("Order");
 		states.Add("Leave");
@@ -115,7 +115,7 @@ public abstract class StateMachineRuntime : Node {
 		charSprite.Texture = ResourceLoader.Load("res://Images/Characters/" + chType) as Texture;
 
 		//have the new character 'walk' on screen
-		MoveSprite(charSprite, fX, fY);
+		MoveSprite(fX, fY, true);
 	}
 
 	//logic for the second 'Order' state
@@ -126,30 +126,42 @@ public abstract class StateMachineRuntime : Node {
 	//logic for the final 'Leave' state
 	private void LeaveLogic() {
 		//move the character off screen and then delete them
-		//add points to point total (only if we do a points thingy)
-		//change to the first state
+		MoveSprite(-289, charSprite.Position.y, false);
 	}
 
 	//moves the sprite incrementally. 
-	async private void MoveSprite(Sprite ch, float finalX, float finalY) {
+	async private void MoveSprite(float finalX, float finalY, bool enter) {
 		//set the sprites starting position to the correct y value off screen
-		GD.Print("Started Moving Sprite.");
-		ch.Position = new Vector2(ch.Position.x, finalY);
+		//GD.Print("Started Moving Sprite.");
+		charSprite.Position = new Vector2(charSprite.Position.x, finalY);
 		Vector2 nPos = new Vector2(0, finalY);
 
-		//incrementally move the sprite by updating the x value
-		for (float i = ch.Position.x; i < finalX; i += 5) {
-			nPos.x = i;
-			ch.Position = nPos;
-			//GD.Print("X: " + ch.Position.x + " Y: " + ch.Position.y);
+		if (enter) {
+			//incrementally move the sprite by updating the x value
+			for (float i = charSprite.Position.x; i < finalX; i += 5) {
+				nPos.x = i;
+				charSprite.Position = nPos;
+				//GD.Print("X: " + ch.Position.x + " Y: " + ch.Position.y);
 
-			//start the time and wait for it to finish
-			myTimer.Start();
-			await ToSignal(myTimer, "timeout");
+				//start the time and wait for it to finish
+				myTimer.Start();
+				await ToSignal(myTimer, "timeout");
+			}
+		} else {
+			//incrementally move the sprite by updating the x value
+			for (float i = charSprite.Position.x; i > finalX; i -= 5) {
+				nPos.x = i;
+				charSprite.Position = nPos;
+				//GD.Print("X: " + ch.Position.x + " Y: " + ch.Position.y);
+
+				//start the time and wait for it to finish
+				myTimer.Start();
+				await ToSignal(myTimer, "timeout");
+			}
 		}
 
 		//move onto the next state
-		GD.Print("Finished Moving Sprite");
+		//GD.Print("Finished Moving Sprite");
 		NextState();
 	}
 

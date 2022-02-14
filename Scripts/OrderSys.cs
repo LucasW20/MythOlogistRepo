@@ -20,7 +20,7 @@ public class OrderSys : Node {
 		mix = GetParent().GetNode<MixingBehaviour>("Mixing");
 		correctDrink = null;
 
-		GD.Print("Ran OrderSys");
+		//GD.Print("Ran OrderSys");
 	}
 
 	//  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,8 +54,8 @@ public class OrderSys : Node {
 
 		//get a random drink & update the class's correct drink
 		int index = rand.Next(0, inst.DrinkSize() - 1);
-		GD.Print("Random Index for Order System: " + index);
-		GD.Print("DrinkList Size: " + inst.DrinkSize());
+		//GD.Print("Random Index for Order System: " + index);
+		//GD.Print("DrinkList Size: " + inst.DrinkSize());
 		Drink randDr = inst.returnDrinkAt(index);
 		correctDrink = randDr;
 

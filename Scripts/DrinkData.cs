@@ -33,6 +33,16 @@ public class DrinkData : Node {
 	}
 
 	// Loop through ingredient list and return object with matching keyword
+	public Ingredient returnIngredientByKeyword(string keyWord) {
+		foreach (Ingredient ingredient in _ingredientList) {
+			if (ingredient.getKeyword() == keyWord) {
+				return ingredient;
+			}
+		}
+		return null;
+	}
+
+	// Loop through ingredient list and return object with matching keyword
 	public bool returnIngredient(String keyWord) {
 		foreach (Ingredient ingredient in _ingredientList) {
 			if (ingredient.getKeyword() == keyWord) {
@@ -97,7 +107,7 @@ public class DrinkData : Node {
 
 				Drink tempDrink = new Drink((temp[0] + ".png"), tempIng1, tempIng2);
 
-				GD.Print(tempDrink.getFirstIng().getKeyword());
+				//GD.Print(tempDrink.getFirstIng().getKeyword());
 				_drinkList.Add(tempDrink);
 			}
 		}
