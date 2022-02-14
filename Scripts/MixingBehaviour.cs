@@ -39,9 +39,11 @@ public class MixingBehaviour : Node {
             //check first order in1 & in2
             if (inst.returnDrinkAt(i).getFirstIng().getKeyword() == in1.getKeyword() && inst.returnDrinkAt(i).getSecondIng().getKeyword() == in2.getKeyword()) {
                 //return good
+                GetParent().GetParent().GetNode<Sprite>("glass").Texture = ResourceLoader.Load("res://Images/Drinks/" + inst.returnDrinkAt(i).getDrinkKeyword()) as Texture;
                 return inst.returnDrinkAt(i);
             } else if (inst.returnDrinkAt(i).getFirstIng().getKeyword() == in2.getKeyword() && inst.returnDrinkAt(i).getSecondIng().getKeyword() == in1.getKeyword()) { //check second order in2 & in1
                 //return good
+                GetParent().GetParent().GetNode<Sprite>("glass").Texture = ResourceLoader.Load("res://Images/Drinks/" + inst.returnDrinkAt(i).getDrinkKeyword()) as Texture;
                 return inst.returnDrinkAt(i);
             }
         }

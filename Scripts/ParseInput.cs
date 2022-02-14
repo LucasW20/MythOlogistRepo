@@ -25,10 +25,11 @@ public class ParseInput : Node {
 
         if (res) {
             GD.Print("Correct");
+            GetParent().GetNode<StateMachineRuntime>("State Machine").NextState();
         } else {
-            GD.Print("False");
+            GD.Print("False. Try Again");
         }
 
-        GetParent().GetNode<StateMachineRuntime>("State Machine").NextState();
+        
     }
 }

@@ -8,7 +8,7 @@
 [ext_resource path="res://Images/Ingredients/in_02_unicornHorn.png" type="Texture" id=6]
 [ext_resource path="res://Images/Ingredients/in_07_soma.png" type="Texture" id=7]
 [ext_resource path="res://Images/Ingredients/in_01_realGreekFire.png" type="Texture" id=8]
-[ext_resource path="res://Images/Ingredients/in_05_styxSluge.png" type="Texture" id=9]
+[ext_resource path="res://Images/Ingredients/in_05_styxSludge.png" type="Texture" id=9]
 [ext_resource path="res://bohzzone.gd" type="Script" id=10]
 [ext_resource path="res://Images/Backround/background.png" type="Texture" id=11]
 [ext_resource path="res://Images/Backround/UI.png" type="Texture" id=12]
@@ -34,6 +34,7 @@
 [ext_resource path="res://Scripts/OrderSys.cs" type="Script" id=32]
 [ext_resource path="res://Images/speech_bubble.png" type="Texture" id=33]
 [ext_resource path="res://Images/Drinks/dr_02_deadinside.png" type="Texture" id=34]
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 80.0

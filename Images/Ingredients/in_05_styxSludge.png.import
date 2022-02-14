@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/in_05_styxSluge.png-76de1c8947391dac3a0c10d654b9ede7.stex"
+path="res://.import/in_05_styxSludge.png-6266976e6ea0552e71f06c153d424510.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Ingredients/in_05_styxSluge.png"
-dest_files=[ "res://.import/in_05_styxSluge.png-76de1c8947391dac3a0c10d654b9ede7.stex" ]
+source_file="res://Images/Ingredients/in_05_styxSludge.png"
+dest_files=[ "res://.import/in_05_styxSludge.png-6266976e6ea0552e71f06c153d424510.stex" ]
 
 [params]
 

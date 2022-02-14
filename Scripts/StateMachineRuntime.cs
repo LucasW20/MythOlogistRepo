@@ -120,6 +120,7 @@ public abstract class StateMachineRuntime : Node {
 
 	//logic for the second 'Order' state
 	private void OrderLogic() {
+		GetParent().GetParent().GetNode<Sprite>("glass").Texture = ResourceLoader.Load("res://Images/glassV01.png") as Texture;
 		orderSystem.Order();
 	}
 

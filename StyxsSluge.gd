@@ -2,7 +2,7 @@ extends Sprite
 
 
 var sludgejuice = preload("res://Images/Drinks/dr_21_styxSludgeJuice.png")
-var normalsludge = preload("res://Images/Ingredients/in_05_styxSluge.png")
+var normalsludge = preload("res://Images/Ingredients/in_05_styxSludge.png")
 onready var sludge = get_node(".")
 var selected = false
 var main_point
