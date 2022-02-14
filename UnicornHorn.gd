@@ -67,6 +67,7 @@ func _input(event):
 							Globaldrink.switch = 2
 						if Globaldrink.switch == 1:
 							Globaldrink.drink2 = Fname
+							get_parent().get_node("SystemsNode").get_node("ParseIn").call("Parse")
 							print(Fname)
 							Globaldrink.switch = 3
 						rest_point = go_back
