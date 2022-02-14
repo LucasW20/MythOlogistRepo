@@ -16,4 +16,23 @@ public class Ingredient {
 
     //getter
     public string getKeyword() { return keyword; }
+
+    public bool Equals(Ingredient other)
+    {
+        if (this.keyword == other.getKeyword())
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public static bool operator ==(Ingredient ingredient1, Ingredient ingredient2)
+    {
+        return ingredient1.Equals(ingredient2);
+    }
+
+    public static bool operator !=(Ingredient ingredient1, Ingredient ingredient2)
+    {
+        return !ingredient1.Equals(ingredient2);
+    }
 }
