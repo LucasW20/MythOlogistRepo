@@ -7,6 +7,7 @@ onready var posion = get_node(".")
 var selected = false
 var rest_point
 var main_point
+var go_back
 var rest_nodes = []
 var main_nodes = []
 var mix_point
@@ -20,6 +21,7 @@ func _ready():
 	main_point = main_nodes[0].global_position
 	rest_point = rest_nodes[0].global_position
 	mix_point = mix_nodes[0].global_position
+	go_back = rest_nodes[0].global_position
 	rest_nodes[0].select()
 
 func _physics_process(delta):
@@ -32,8 +34,11 @@ func _physics_process(delta):
 
 func _on_op2D_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("grab"):
-		print(name)
-		print("working")
+		Fname = "in_04_orochiPoison"
+		if Globaldrink.switch == 2:
+			Globaldrink.switch = 1
+		if Globaldrink.switch == 3:
+			Globaldrink.switch = 0
 		selected = true
 
 func _input(event):
@@ -47,16 +52,18 @@ func _input(event):
 					child.select()
 					rest_point = child.global_position
 					shortest_dist = distance
-					posion.set_texture(posionjuice)
+					
 					if main_point == rest_point:
 						posion.set_texture(normalposion)
 					if rest_point == mix_point:
 						Globaldrink.getter = Fname
 						if Globaldrink.switch == 0:
 							Globaldrink.drink1 = Fname
+							print(Fname)
 							Globaldrink.switch = 2
 						if Globaldrink.switch == 1:
 							Globaldrink.drink2 = Fname
+							print(Fname)
 							Globaldrink.switch = 3
-						
+						rest_point = go_back
 

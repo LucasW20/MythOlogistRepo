@@ -6,6 +6,7 @@ var normalfruit = preload("res://Images/Ingredients/in_08_forbiddenFruit.png")
 onready var fruit = get_node(".")
 var selected = false
 var rest_point
+var go_back
 var rest_nodes = []
 var main_point
 var main_nodes = []
@@ -19,6 +20,7 @@ func _ready():
 	mix_nodes = get_tree().get_nodes_in_group("mixspot")
 	main_point = main_nodes[0].global_position
 	rest_point = rest_nodes[0].global_position
+	go_back = rest_nodes[0].global_position
 	mix_point = mix_nodes[0].global_position
 	rest_nodes[0].select()
 	
@@ -37,9 +39,10 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 			Globaldrink.switch = 1
 		if Globaldrink.switch == 3:
 			Globaldrink.switch = 0
-		Fname = name
-		print(Fname)
+		Fname = "in_08_forbiddenFruit"
 		selected = true
+		
+	
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -52,14 +55,21 @@ func _input(event):
 					child.select()
 					rest_point = child.global_position
 					shortest_dist = distance
-					fruit.set_texture(fruitjuice)
 					if rest_point == main_point:
 						fruit.set_texture(normalfruit)
 					if rest_point == mix_point:
 						Globaldrink.getter = Fname
 						if Globaldrink.switch == 0:
 							Globaldrink.drink1 = Fname
+							print(Fname)
 							Globaldrink.switch = 2
 						if Globaldrink.switch == 1:
 							Globaldrink.drink2 = Fname
+							print(Fname)
 							Globaldrink.switch = 3
+						rest_point = go_back
+						
+		
+
+
+

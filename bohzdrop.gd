@@ -6,6 +6,7 @@ var zeusbox = preload("res://Images/Ingredients/in_06_bloodOfHeyZeus.png")
 onready var zeus = get_node(".")
 var selected = false
 var rest_point
+var go_back
 var rest_nodesbohz = []
 var main_point
 var main_nodes = []
@@ -20,6 +21,7 @@ func _ready():
 	main_point = main_nodes[0].global_position
 	rest_point = rest_nodesbohz[0].global_position
 	mix_point = mix_nodes[0].global_position
+	go_back = rest_nodesbohz[0].global_position
 	rest_nodesbohz[0].select()
 
 
@@ -34,8 +36,11 @@ func _physics_process(delta):
 
 func _on_bohz_2D_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("grab"):
-		Fname = name
-		
+		Fname = "in_06_bloodOfHeyZeus"
+		if Globaldrink.switch == 2:
+			Globaldrink.switch = 1
+		if Globaldrink.switch == 3:
+			Globaldrink.switch = 0
 		selected = true
 
 func _input(event):
@@ -50,16 +55,18 @@ func _input(event):
 					rest_point = child.global_position
 					shortest_dist = distance
 					
-					zeus.set_texture(zeusjuice)
+					
 					if rest_point == main_point:
 						zeus.set_texture(zeusbox)
 					if rest_point == mix_point:
 						Globaldrink.getter = Fname
 						if Globaldrink.switch == 0:
 							Globaldrink.drink1 = Fname
+							print(Fname)
 							Globaldrink.switch = 2
 						if Globaldrink.switch == 1:
 							Globaldrink.drink2 = Fname
+							print(Fname)
 							Globaldrink.switch = 3
-						
+						rest_point = go_back
 		
