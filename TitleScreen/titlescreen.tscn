@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Images/Buttons/Asset 4@2x.png" type="Texture" id=4]
 [ext_resource path="res://Images/Backround/lookFeel.png" type="Texture" id=5]
 [ext_resource path="res://Images/Buttons/Asset 11@2x.png" type="Texture" id=6]
 [ext_resource path="res://BarRoomScreen/StartScreen.gd" type="Script" id=7]
 [ext_resource path="res://Fonts/CATChilds.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://TitleScreen/MousePointer.cs" type="Script" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -43,7 +42,7 @@ font_data = ExtResource( 8 )
 [node name="titlescreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
