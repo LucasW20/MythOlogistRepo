@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Images/Ingredients/in_05_styxSluge.png" type="Texture" id=1]
 [ext_resource path="res://Images/Backround/UI.png" type="Texture" id=2]
@@ -65,11 +65,23 @@ radius = 80.0
 [sub_resource type="CircleShape2D" id=8]
 radius = 80.0
 
+[sub_resource type="StyleBoxEmpty" id=10]
+
 [sub_resource type="DynamicFont" id=9]
 size = 60
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 39 )
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=11]
 
 [node name="MainScreen" type="Node2D"]
 script = ExtResource( 35 )
@@ -358,6 +370,7 @@ anchor_right = 1.75
 anchor_bottom = 1.775
 margin_left = -77.0
 margin_right = -77.0
+custom_styles/normal = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -385,6 +398,11 @@ __meta__ = {
 anchor_right = 1.75
 anchor_bottom = 1.775
 margin_right = -7.62939e-06
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/disabled = SubResource( 15 )
+custom_styles/normal = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
